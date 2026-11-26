@@ -10,6 +10,8 @@ This repo is **public**, and GitHub Pages publishes everything in it, so keep it
 |---|---|
 | `index.html` | The whole site: one page with inline CSS and JS, no build step. |
 | `*.mp4` | Videos played on the site. `intro.mp4` is the default clip; a term with its own video is listed in `VIDEOS` in `index.html`. |
+| `og-image.png` | The picture shown when someone shares a hoopslang.com link (1200×630, logo B). |
+| `apple-touch-icon.png` | The icon when someone adds the site to an iPhone home screen (180×180, logo B). |
 | `CNAME` | Connects the domain. **Never delete or rename it**, or hoopslang.com goes offline. |
 | `.nojekyll` | Tells GitHub Pages to serve the files as they are. Keep it. |
 
