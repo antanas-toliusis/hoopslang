@@ -1,0 +1,1504 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>hoopslang.com: basketball jargon, drills and coaching</title>
+<meta name="description" content="Basketball moves, plays and spots on the floor explained in plain words, with drills to practise them and a coach's guide.">
+<meta property="og:title" content="hoopslang.com">
+<meta property="og:description" content="Basketball jargon, A to Z: moves, plays and spots on the floor explained in plain words, with drills and a coaching guide.">
+<meta property="og:url" content="https://hoopslang.com/">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#d4581a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-50 -50 100 100'%3E%3Ccircle r='46' fill='%23d4581a' stroke='%231d1a17' stroke-width='6'/%3E%3Cpath d='M-46 0H46M0-46V46M-32-32Q-13 0-32 32M32-32Q13 0 32 32' fill='none' stroke='%231d1a17' stroke-width='6'/%3E%3C/svg%3E">
+<style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Instrument+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: arena scoreboard header, then a filterable index of term cards; each card ends in a YouTube search link */
+:root {
+  --bg: #f6f3ee;
+  --surface: #ffffff;
+  --ink: #1d1a17;
+  --muted: #6b635b;
+  --line: #e2dbd1;
+  --leather: #d4581a;
+  --leather-ink: #ffffff;
+  --chip: #f1e7dc;
+  --display: "Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
+  --body: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #161412; --surface: #201d1a; --ink: #f2ece4; --muted: #a59b90;
+    --line: #34302b; --leather: #ee7a3f; --leather-ink: #1a0f08; --chip: #2c2621;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #161412; --surface: #201d1a; --ink: #f2ece4; --muted: #a59b90;
+  --line: #34302b; --leather: #ee7a3f; --leather-ink: #1a0f08; --chip: #2c2621;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--body); font-size: 16px; line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 28px 48px;
+}
+.wrap { max-width: 920px; margin: 0 auto; display: grid; gap: 24px; }
+header { display: grid; gap: 6px; }
+.eyebrow { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+h1 {
+  font-family: var(--display); font-weight: 900; text-transform: uppercase;
+  font-size: clamp(44px, 11vw, 88px); line-height: .9; margin: 0; letter-spacing: .01em;
+  text-wrap: balance;
+}
+h1 span { color: var(--leather); }
+.brand { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+.search-btn {
+  flex-shrink: 0; width: 48px; height: 48px; border-radius: 50%; cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 2px solid var(--ink); background: var(--surface); color: var(--ink);
+}
+.search-btn svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; }
+.search-btn:hover { background: var(--chip); }
+.search-btn[aria-expanded="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.search-btn:focus-visible, .search-bar input:focus-visible { outline: 3px solid var(--leather); outline-offset: 2px; }
+.search-bar { margin: 6px 0 4px; position: relative; max-width: 560px; }
+.suggest {
+  position: absolute; z-index: 20; left: 0; right: 0; top: calc(100% + 6px);
+  margin: 0; padding: 6px; list-style: none;
+  background: var(--surface); border: 1.5px solid var(--line); border-radius: 16px;
+  box-shadow: 0 10px 28px rgb(0 0 0 / .18);
+}
+.suggest li {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 10px 12px; border-radius: 10px; cursor: pointer; font-weight: 600;
+}
+.suggest li small {
+  flex-shrink: 0; font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--muted); background: var(--chip); padding: 2px 7px; border-radius: 5px;
+}
+.suggest li:hover, .suggest li[aria-selected="true"] { background: var(--chip); }
+.suggest li[aria-selected="true"] small { background: var(--surface); }
+.search-bar input {
+  width: 100%; max-width: 560px; font: inherit; font-size: 17px; padding: 11px 16px;
+  border-radius: 999px; border: 1.5px solid var(--line); background: var(--surface); color: var(--ink);
+}
+.search-bar input::placeholder { color: var(--muted); }
+.search-bar input { padding-right: 52px; }
+.search-bar input::-webkit-search-cancel-button { -webkit-appearance: none; appearance: none; }
+.q-clear {
+  position: absolute; right: 7px; top: 50%; transform: translateY(-50%);
+  width: 34px; height: 34px; border-radius: 50%; border: 0; cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--ink); color: var(--bg);
+}
+.q-clear svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.6; stroke-linecap: round; }
+.q-clear:hover { filter: brightness(1.25); }
+.q-clear:focus-visible { outline: 3px solid var(--leather); outline-offset: 2px; }
+mark { background: rgb(212 88 26 / .22); color: inherit; border-radius: 3px; padding: 0 1px; }
+.lede { margin: 0; color: var(--muted); max-width: 60ch; }
+
+.controls { display: grid; gap: 12px; scroll-margin-top: 16px; }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; }
+.filter {
+  font: inherit; font-size: 14px; font-weight: 600; padding: 7px 14px; border-radius: 999px;
+  border: 1.5px solid var(--line); background: transparent; color: var(--ink); cursor: pointer;
+}
+.filter[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.filter:focus-visible, .yt:focus-visible, .cat:focus-visible { outline: 3px solid var(--leather); outline-offset: 2px; }
+
+.count { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
+.term {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+  padding: 16px; display: flex; flex-direction: column; gap: 8px; min-width: 0;
+}
+.term-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.head-tools { display: flex; align-items: center; gap: 4px; flex-shrink: 0; }
+.fav {
+  width: 36px; height: 36px; margin: -8px -8px -8px 0; display: inline-flex; align-items: center; justify-content: center;
+  border: 0; border-radius: 8px; background: transparent; color: var(--muted); cursor: pointer;
+}
+.fav svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linejoin: round; }
+.fav:hover { color: var(--ink); }
+.fav[aria-pressed="true"] { color: var(--leather); }
+.fav[aria-pressed="true"] svg { fill: currentColor; }
+.fav:focus-visible { outline: 3px solid var(--leather); outline-offset: 0; }
+.filter svg { width: 14px; height: 14px; fill: currentColor; vertical-align: -2px; margin-right: 5px; }
+.term h2 {
+  font-family: var(--display); font-weight: 700; text-transform: uppercase;
+  font-size: 26px; line-height: 1; margin: 0; letter-spacing: .02em;
+}
+.cat {
+  font-family: var(--body); font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+  background: var(--chip); color: var(--muted); padding: 3px 8px; border-radius: 5px; white-space: nowrap;
+  border: 0; cursor: pointer; line-height: 1.5;
+}
+.cat:hover { color: var(--ink); }
+.cat[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+.term p { margin: 0; color: var(--ink); flex: 1; }
+.links { display: flex; gap: 8px; }
+.yt {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; border-radius: 10px; text-decoration: none;
+  background: #ff0000; color: #ffffff; /* YouTube brand red, same in both themes */
+}
+.yt.ig {
+  background: #000000;
+  color: #ffffff;
+}
+:root[data-theme="dark"] .yt.ig { box-shadow: inset 0 0 0 1px #3a3632; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .yt.ig { box-shadow: inset 0 0 0 1px #3a3632; }
+}
+.yt svg { width: 22px; height: 22px; fill: currentColor; }
+.yt:hover { filter: brightness(1.08); }
+.yt.ig:hover { filter: none; opacity: .85; }
+.empty { color: var(--muted); padding: 24px 0; }
+.links { gap: 18px; flex-wrap: wrap; }
+.ext {
+  display: inline-flex; align-items: center; gap: 6px; padding: 6px 0;
+  font-size: 14px; font-weight: 600; color: var(--ink); text-decoration: none;
+}
+.ext:hover { text-decoration: underline; text-underline-offset: 3px; }
+.ext:focus-visible { outline: 3px solid var(--leather); outline-offset: 2px; border-radius: 4px; }
+.ext svg { width: 17px; height: 17px; flex-shrink: 0; }
+.ext-yt svg { fill: #ff0000; }
+.ext-ig svg { fill: none; stroke: currentColor; stroke-width: 2; }
+.sections {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; padding: 4px;
+  background: var(--chip); border-radius: 12px; max-width: 680px;
+}
+@media (max-width: 460px) { .sec { font-size: 16px; padding: 9px 2px; } }
+.sec {
+  font-family: var(--display); font-weight: 700; text-transform: uppercase; font-size: 19px; letter-spacing: .03em;
+  line-height: 1.05; padding: 9px 6px; border: 0; border-radius: 9px; background: transparent; color: var(--muted); cursor: pointer;
+}
+.sec:hover { color: var(--ink); }
+.sec[aria-pressed="true"] { background: var(--leather); color: var(--leather-ink); box-shadow: 0 2px 6px rgb(212 88 26 / .35); }
+.sec:focus-visible { outline: 3px solid var(--leather); outline-offset: 2px; }
+.secnote { margin: 0; font-size: 14px; color: var(--muted); }
+.term.flash { box-shadow: 0 0 0 3px var(--leather); }
+@media (prefers-reduced-motion: no-preference) { .term { transition: box-shadow .4s; } }
+.links { align-items: center; }
+.drills-link, .book {
+  margin-left: auto; font: inherit; font-size: 14px; font-weight: 600; padding: 9px 14px; border-radius: 999px;
+  border: 1.5px solid var(--line); background: transparent; color: var(--ink); cursor: pointer; text-decoration: none; white-space: nowrap;
+}
+.drills-link { background: var(--leather); border-color: var(--leather); color: var(--leather-ink); font-weight: 700; letter-spacing: .02em; box-shadow: 0 2px 6px rgb(212 88 26 / .3); }
+.drills-link:hover { filter: brightness(1.08); }
+/* "Train this" as a bold underlined text link, so the row isn't two big buttons */
+.drills-link, .book {
+  background: none; border: 0; box-shadow: none; border-radius: 4px; padding: 8px 2px;
+  color: var(--leather); font-weight: 700; font-size: 15px; letter-spacing: .01em;
+  text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px;
+}
+.drills-link:hover, .book:hover { filter: none; text-decoration-thickness: 3px; }
+.drills-link:focus-visible, .book:focus-visible, .skill-link:focus-visible, .clear-skill:focus-visible { outline: 3px solid var(--leather); outline-offset: 2px; }
+.meta { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; margin-top: -4px; }
+.trains { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: 13px; }
+.trains span { font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-right: 2px; }
+.skill-link {
+  font: inherit; font-size: 13px; font-weight: 600; padding: 2px 9px; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--line); background: var(--bg); color: var(--ink);
+}
+.skill-link:hover { border-color: var(--leather); color: var(--leather); }
+.skill-link[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.steps { margin: 0; padding-left: 20px; display: grid; gap: 4px; font-size: 15px; }
+.drill .tip { flex: 0; margin: 0; font-size: 14px; background: var(--chip); border-radius: 8px; padding: 8px 10px; }
+.drill .tip b { font-weight: 600; }
+.drill .steps { flex: 1; }
+.count b { color: var(--ink); font-weight: 600; }
+.to-top {
+  position: fixed; z-index: 10;
+  right: max(16px, calc(env(safe-area-inset-right, 0px) + 12px));
+  bottom: max(20px, calc(env(safe-area-inset-bottom, 0px) + 16px));
+  width: 52px; height: 52px; border-radius: 50%; border: 0; cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--leather); color: var(--leather-ink);
+  box-shadow: 0 4px 14px rgb(0 0 0 / .25);
+  opacity: 0; transform: translateY(12px); pointer-events: none;
+}
+.to-top.show { opacity: 1; transform: none; pointer-events: auto; }
+@media (prefers-reduced-motion: no-preference) { .to-top { transition: opacity .2s, transform .2s; } }
+.to-top svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+.to-top:hover { filter: brightness(1.08); }
+.to-top:focus-visible { outline: 3px solid var(--leather); outline-offset: 2px; }
+/* Video: cards open a player */
+.term { cursor: pointer; }
+.term:hover { border-color: var(--muted); }
+.play {
+  display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px 8px 10px;
+  font: inherit; font-size: 14px; font-weight: 700; letter-spacing: .02em; cursor: pointer;
+  border: 0; border-radius: 999px; background: var(--ink); color: var(--bg);
+}
+.play svg { width: 18px; height: 18px; fill: currentColor; }
+.play:hover { filter: brightness(1.25); }
+.play:focus-visible { outline: 3px solid var(--leather); outline-offset: 2px; }
+.term .links { position: relative; flex-wrap: nowrap; }
+.wm {
+  position: absolute; z-index: 15; left: 0; bottom: calc(100% + 8px);
+  display: grid; gap: 2px; padding: 6px; min-width: 240px;
+  background: var(--surface); border: 1.5px solid var(--line); border-radius: 16px;
+  box-shadow: 0 10px 28px rgb(0 0 0 / .2);
+}
+.wm-item {
+  display: flex; align-items: center; gap: 12px; padding: 9px 12px; border-radius: 10px;
+  font: inherit; font-size: 15px; font-weight: 600; text-align: left; text-decoration: none;
+  color: var(--ink); background: transparent; border: 0; cursor: pointer;
+}
+.wm-item:hover, .wm-item:focus-visible { background: var(--chip); outline: none; }
+.wm-item small { display: block; font-size: 12px; font-weight: 500; color: var(--muted); }
+.wm-item > svg, .wm-item > span:first-child { width: 28px; height: 28px; flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; }
+.wm-item > svg { width: 26px; height: 26px; }
+.wm-yt svg { width: 26px; height: 26px; fill: #ff0000; }
+.wm-ig svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 2; }
+.player {
+  padding: 0; border: 0; background: transparent; color: var(--ink);
+  max-width: calc(100vw - 32px); max-height: calc(100dvh - 32px);
+}
+.player::backdrop { background: rgb(10 8 6 / .78); }
+.p-box {
+  background: var(--surface); border-radius: 18px; padding: 14px; display: grid; gap: 12px;
+  box-shadow: 0 20px 60px rgb(0 0 0 / .4);
+}
+.p-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.p-names { display: grid; gap: 2px; min-width: 0; }
+.p-kind { font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.p-head h2 {
+  font-family: var(--display); font-weight: 700; text-transform: uppercase; font-size: 26px; line-height: 1;
+  margin: 0; letter-spacing: .02em; overflow-wrap: anywhere;
+}
+.p-close {
+  flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%; border: 0; cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center; background: var(--chip); color: var(--ink);
+}
+.p-close svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.6; stroke-linecap: round; }
+.p-close:hover { background: var(--line); }
+.p-close:focus-visible { outline: 3px solid var(--leather); outline-offset: 2px; }
+.player video {
+  display: block; background: #000; border-radius: 12px;
+  /* vertical 9:16 clip: as tall as the screen allows, never wider than it */
+  height: min(calc(100dvh - 140px), calc((100vw - 60px) * 16 / 9), 760px);
+  aspect-ratio: 9 / 16; width: auto; max-width: 100%;
+}
+.clear-skill { font: inherit; font-size: 13px; color: var(--leather); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; }
+@media (prefers-reduced-motion: no-preference) {
+  .yt { transition: filter .15s, background .15s; }
+  .cat { transition: background .15s, color .15s; }
+}
+/* Coaching guide chapters: full-width cards */
+.term.guide { grid-column: 1 / -1; gap: 12px; }
+.term.guide { cursor: auto; }
+.term.guide:hover { border-color: var(--line); }
+.guide h2 { display: flex; align-items: baseline; gap: 10px; }
+.gnum { color: var(--leather); font-size: 34px; line-height: .8; }
+.gtag { font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); background: var(--chip); padding: 3px 8px; border-radius: 5px; white-space: nowrap; }
+.guide .glede { color: var(--muted); flex: 0; }
+.guide h3 { margin: 0 0 6px; font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.gcols { display: grid; grid-template-columns: 1.4fr 1fr; gap: 18px; }
+@media (max-width: 640px) { .gcols { grid-template-columns: 1fr; } }
+.gteach { margin: 0; padding-left: 18px; display: grid; gap: 5px; font-size: 15px; }
+.gcues { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+.gcue { background: var(--leather); color: var(--leather-ink); font-size: 13px; font-weight: 600; padding: 3px 10px; border-radius: 999px; }
+.guide .geye { flex: 0; margin: 0; font-size: 14px; background: var(--ink); color: var(--bg); border-radius: 8px; padding: 10px 12px; }
+.gfaults summary { cursor: pointer; font-weight: 600; font-size: 14px; padding: 4px 0; }
+.gfaults summary:focus-visible { outline: 3px solid var(--leather); outline-offset: 2px; border-radius: 4px; }
+.gtable { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 6px; }
+.gtable th { text-align: left; font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding: 6px 8px; border-bottom: 2px solid var(--ink); }
+.gtable td { padding: 7px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.gtable td:first-child { font-weight: 600; }
+.gscroll { overflow-x: auto; }
+.gextra h3 { margin-top: 4px; }
+.gextra .gtable + h3 { margin-top: 14px; }
+.drill-jump { font: inherit; font-size: 13px; font-weight: 600; padding: 2px 9px; border-radius: 999px; cursor: pointer; border: 1px solid var(--line); background: var(--bg); color: var(--ink); }
+.drill-jump:hover { border-color: var(--leather); color: var(--leather); }
+.drill-jump:focus-visible { outline: 3px solid var(--leather); outline-offset: 2px; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Basketball jargon, A to Z</div>
+    <div class="brand">
+      <h1>Hoops<span>lang</span></h1>
+      <button type="button" class="search-btn" id="searchBtn" aria-label="Search" aria-expanded="false" aria-controls="searchBar">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
+      </button>
+    </div>
+    <div class="search-bar" id="searchBar" hidden>
+      <input type="search" id="q" placeholder="Search terms and drills" autocomplete="off" enterkeyhint="search" aria-label="Search terms and drills" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="suggest">
+      <button type="button" class="q-clear" id="qClear" aria-label="Clear search" hidden>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+      <ul class="suggest" id="suggest" role="listbox" aria-label="Suggestions" hidden></ul>
+    </div>
+    <p class="lede">Moves, plays and spots on the floor, explained in plain words, with drills to practise them and a coaching guide. Tap Watch to see each one in action on hoopslang, YouTube or Instagram. Tap the star to save a term to your Favourites.</p>
+  </header>
+
+  <div class="controls" id="controls">
+    <div class="sections" id="sections" role="group" aria-label="Section"></div>
+    <p class="secnote" id="secnote"></p>
+    <div class="filters" id="filters" role="group" aria-label="Filter by category"></div>
+    <div class="count" id="count"></div>
+  </div>
+
+  <div class="grid" id="grid"></div>
+  <button type="button" class="to-top" id="toTop" aria-label="Back to top" title="Back to top" inert>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+</div>
+
+<dialog class="player" id="player" aria-labelledby="pTitle">
+  <div class="p-box">
+    <div class="p-head">
+      <div class="p-names">
+        <span class="p-kind" id="pKind"></span>
+        <h2 id="pTitle"></h2>
+      </div>
+      <button type="button" class="p-close" id="pClose" aria-label="Close video">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <video id="pVideo" controls playsinline preload="metadata"></video>
+  </div>
+</dialog>
+
+<script>
+const TERMS = [
+  { term: "Killer crossover", cat: "Ball handling", def: "A hard, low dribble switched from one hand to the other at full speed, usually with a fake first, to shake the defender off balance." },
+  { term: "Euro step", cat: "Ball handling", def: "Two steps in different directions on a drive: step one way, then sweep the other way past the defender before finishing." },
+  { term: "Step-back", cat: "Ball handling", def: "A hop backwards off the dribble to create space for a jump shot." },
+  { term: "Same-foot step-back", cat: "Ball handling", def: "A step-back where you push off one foot and land back on that same foot first, then bring the other foot down. Shorter and quicker than a normal step-back, it keeps your shoulders square and your balance set to rise straight into the shot." },
+  { term: "Spin move", cat: "Ball handling", def: "A full turn while dribbling, keeping the body between defender and ball, to get past a defender who is leaning." },
+  { term: "Half-spin", cat: "Ball handling", def: "Start a spin move, but stop halfway with your back to the defender, then pivot back the way you came. When the defender jumps to cut off the spin, you go back to the open side." },
+  { term: "Hesitation", cat: "Ball handling", def: "A brief pause or fake stop mid-drive that freezes the defender, followed by an explosive burst." },
+  { term: "Behind the back", cat: "Ball handling", def: "Switching hands by bouncing the ball behind the body, keeping it away from a reaching defender." },
+  { term: "Between the legs", cat: "Ball handling", def: "Switching hands by bouncing the ball through your legs, keeping your body between the defender and the ball." },
+  { term: "In and out", cat: "Ball handling", def: "Fake a crossover by pushing the ball inward, then pull it back out with the same hand and go." },
+  { term: "Shamgod", cat: "Ball handling", def: "Push the ball out wide with one hand, then pull it back across with the other as you step past the defender." },
+  { term: "Snatch back", cat: "Ball handling", def: "Yank the ball back toward you while hopping backwards, to create space or reset the play." },
+  { term: "Jab step", cat: "Ball handling", def: "A quick, short step at the defender from triple threat to make them react, while keeping your pivot foot planted." },
+  { term: "Triple threat", cat: "Ball handling", def: "Holding the ball at the hip with knees bent, ready to shoot, pass or dribble." },
+  { term: "Rocker step", cat: "Ball handling", def: "A jab step, then rock back as if to shoot, then drive past the defender when they close in." },
+  { term: "First step", cat: "Ball handling", def: "The explosive first stride past your defender from triple threat or a standstill. A quick first step wins the drive before the defender can react." },
+  { term: "Direct drive", cat: "Ball handling", def: "A first step straight past the defender's lead foot, on the same side as the ball. Also called an open step." },
+  { term: "Downhill", cat: "Ball handling", def: "Attacking the basket in a straight line at full speed, with your shoulders and momentum going toward the rim. Also called attacking downhill or getting downhill. It puts the defender on their heels." },
+  { term: "Baseline drive", cat: "Ball handling", def: "Driving past your defender on the baseline side, along the end line toward the rim. Often finished with a reverse layup or a pass out to the corner." },
+  { term: "Crossover step", cat: "Ball handling", def: "A first step that crosses over your body to the other side, swinging the ball through low to protect it from the defender. Also called a cross step." },
+  { term: "Retreat dribble", cat: "Ball handling", def: "Dribbling backwards away from pressure to buy space and see the floor." },
+  { term: "Pound dribble", cat: "Ball handling", def: "A hard, forceful dribble that keeps the ball under control and builds rhythm." },
+  { term: "Change of pace", cat: "Ball handling", def: "Going slow, then exploding fast, or the reverse, to throw off the defender's timing." },
+  { term: "Overload training", cat: "Ball handling", def: "Making practice harder than the game, with two balls, a tennis ball, reaction calls or less time, so one ball in a game feels easy." },
+  { term: "Two-foot stop", cat: "Ball handling", def: "At full speed, plant both feet at the same time and stop. Either foot can be your pivot, so you can shoot, fake or pivot. Also called a jump stop." },
+  { term: "Stop and go", cat: "Ball handling", def: "Drive hard, stop suddenly to freeze the defender, then explode again past them." },
+  { term: "Jumper", cat: "Shooting", def: "A shot taken while jumping straight up, released at the top of the jump. Also called a jump shot." },
+  { term: "Pull-up jumper", cat: "Shooting", def: "Stop suddenly off the dribble and rise straight into a jump shot." },
+  { term: "Catch and shoot", cat: "Shooting", def: "Receive a pass already in shooting position and shoot right away, with no dribble." },
+  { term: "Shot off a screen", cat: "Shooting", def: "Run your defender into a teammate's screen, catch on the move and shoot before the defense recovers." },
+  { term: "Fadeaway", cat: "Shooting", def: "A jump shot taken while leaning or jumping backwards, away from the defender, to make it hard to block." },
+  { term: "Turnaround jumper", cat: "Shooting", def: "With your back to the basket, pivot or spin to face it and rise into a jump shot." },
+  { term: "Side-step three", cat: "Shooting", def: "A hop sideways off the dribble to get clear of a closing defender, then a three-point shot." },
+  { term: "Hop into shot", cat: "Shooting", def: "Land on both feet at once from a small hop before shooting, so you can square up and pivot either way." },
+  { term: "One-two step", cat: "Shooting", def: "Plant one foot then the other going into a shot, inside foot first, then outside foot, using the steps to gather rhythm and balance. Also called a one-two stop." },
+  { term: "Pump fake", cat: "Shooting", def: "Fake a shot by lifting the ball without leaving the floor, to get the defender to jump." },
+  { term: "Mid-range", cat: "Shooting", def: "A jump shot from inside the three-point line but outside the paint." },
+  { term: "Three-pointer", cat: "Shooting", def: "A shot from behind the three-point line, worth three points." },
+  { term: "Deep three", cat: "Shooting", def: "A three-pointer taken well behind the line, often several feet back." },
+  { term: "Bank shot", cat: "Shooting", def: "A shot aimed off the backboard into the basket, most useful from angles on the side." },
+  { term: "Free throw", cat: "Shooting", def: "An unguarded shot from the free-throw line after a foul, worth one point." },
+  { term: "Set shot", cat: "Shooting", def: "A shot taken with your feet staying on or barely leaving the floor, as with a free throw." },
+  { term: "Shot pocket", cat: "Shooting", def: "The spot near your hip or chest where you hold the ball just before you shoot. Catching straight into it makes your shot quicker." },
+  { term: "Follow-through", cat: "Shooting", def: "Finishing the shot with your arm extended and wrist snapped down, held until the ball lands. Also called gooseneck." },
+  { term: "Arc", cat: "Shooting", def: "How high the ball travels on its way to the rim. More arc gives the ball a bigger target as it drops in." },
+  { term: "Shooting line", cat: "Shooting", def: "An imaginary straight line from the rim down to your shooting foot. Foot, knee, hip, elbow, wrist and ball all stay on it, which keeps the shot from missing left or right." },
+  { term: "Face-up jumper", cat: "Shooting", def: "Catching with your back to the basket or on the move, turning to face the rim, reading the defender, then rising into a jump shot." },
+  { term: "Floater", cat: "Finishing", def: "A soft, high-arcing one-handed shot released early over taller defenders near the basket." },
+  { term: "Layup", cat: "Finishing", def: "A one-handed shot taken right next to the basket, usually laid softly off the backboard." },
+  { term: "Reverse layup", cat: "Finishing", def: "A layup finished on the far side of the basket, using the rim to shield the ball from the defender." },
+  { term: "Finger roll", cat: "Finishing", def: "A layup where the ball rolls off the fingertips with the palm facing up." },
+  { term: "Scoop layup", cat: "Finishing", def: "An underhand layup scooped up low and early, under a shot blocker's arms." },
+  { term: "Runner", cat: "Finishing", def: "A one-handed shot thrown up on the move from a few steps out, without stopping. A faster, flatter floater." },
+  { term: "Hook shot", cat: "Finishing", def: "A one-handed shot swept up and over the head, with the body sideways to shield the ball." },
+  { term: "Up and under", cat: "Finishing", def: "A complete scoring move: a convincing shot fake to get the defender in the air, then a step-through under them for the finish." },
+  { term: "Step-through", cat: "Ball handling", def: "Footwork, not a full move: keep your pivot foot down and step the other foot past your defender. No shot fake needed, and you can finish or pass out of it. It's the second half of an up and under." },
+  { term: "Speed dribble", cat: "Ball handling", def: "Pushing the ball out ahead of you at waist height so you can sprint at full speed, used in the open court." },
+  { term: "Control dribble", cat: "Ball handling", def: "A low, tight dribble kept beside your body, with your off arm up to shield it, used when a defender is close." },
+  { term: "Double crossover", cat: "Ball handling", def: "Two crossovers in a row: cross one way, then straight back the other way before the defender can recover." },
+  { term: "Pullback crossover", cat: "Ball handling", def: "Drive hard, then pull the ball back with one or two quick backward steps while keeping your dribble. When the defender steps up to follow, cross over and attack the other side. Great for escaping a trap or a defender who is cutting off your drive." },
+  { term: "Hang dribble", cat: "Ball handling", def: "Holding the ball at the top of the bounce for a split second, as if about to shoot or pass, to freeze the defender before you attack." },
+  { term: "Front pivot", cat: "Ball handling", def: "Keeping one foot planted and stepping forward with the other to turn, so you face where you were going." },
+  { term: "Reverse pivot", cat: "Ball handling", def: "Keeping one foot planted and swinging the other foot backwards to turn, often to escape pressure or face the basket." },
+  { term: "Sweep through", cat: "Ball handling", def: "From triple threat, swinging the ball low and hard across your body, below the defender's hands, to protect it and set up a drive." },
+  { term: "Dunk", cat: "Finishing", def: "Jumping up and putting the ball straight down through the rim." },
+  { term: "Putback", cat: "Finishing", def: "Grabbing an offensive rebound and scoring straight away, close to the rim." },
+  { term: "And-one", cat: "Finishing", def: "Scoring while being fouled. The basket counts and you get one free throw." },
+  { term: "Pick and roll", cat: "Team offense", def: "A teammate sets a screen for the ball handler, then rolls toward the basket for a pass." },
+  { term: "Give and go", cat: "Team offense", def: "Pass to a teammate, cut hard to the basket, and get the ball right back." },
+  { term: "Fast break", cat: "Team offense", def: "Pushing the ball up the floor quickly to score before the defense is set." },
+  { term: "Pick and pop", cat: "Team offense", def: "The screener steps out for a jump shot instead of rolling to the basket." },
+  { term: "Isolation", cat: "Team offense", def: "Clearing out one side so one player can go one-on-one. Often called iso." },
+  { term: "Post up", cat: "Off-ball", def: "Setting up near the basket with your back to the defender, calling for the ball." },
+  { term: "Drive and kick", cat: "Team offense", def: "Attack the basket to pull defenders in, then pass out to an open shooter." },
+  { term: "Dribble handoff", cat: "Team offense", def: "The ball handler dribbles toward a teammate and hands them the ball while screening their defender." },
+  { term: "Alley-oop", cat: "Team offense", def: "A lob pass caught in the air near the rim and finished with a dunk or layup before landing." },
+  { term: "Motion offense", cat: "Team offense", def: "An offense built on constant passing, cutting and screening instead of fixed set plays." },
+  { term: "Inbound play", cat: "Team offense", def: "A set play to get the ball in from out of bounds, from under the basket or the sideline." },
+  { term: "Offensive rebound", cat: "Finishing", def: "Grabbing a missed shot on your own team's end for another chance to score." },
+  { term: "Power layup", cat: "Finishing", def: "A layup off two feet, with the ball held in both hands and the shoulder leading into contact." },
+  { term: "Pro hop", cat: "Finishing", def: "A hop off one foot that lands on both feet at the same time going into a layup, so you can finish strong on either side." },
+  { term: "Wrong-foot layup", cat: "Finishing", def: "A layup taken off the 'wrong' foot (the same side as the shooting hand), which changes your timing and catches shot blockers off guard." },
+  { term: "Inside-hand layup", cat: "Finishing", def: "Finishing with the hand nearest the middle of the court, used to get the ball around a defender coming across." },
+  { term: "Drop step", cat: "Finishing", def: "In the post, swinging one foot back around the defender and sealing them behind you, then going strong to the rim." },
+  { term: "Dream shake", cat: "Finishing", def: "A post move built from fakes and pivots: fake one way, spin or step the other, then finish once the defender bites." },
+  { term: "Baby hook", cat: "Finishing", def: "A short hook shot from close range, released with one hand over the defender, with your body between them and the ball." },
+  { term: "Spacing", cat: "Team offense", def: "Spreading players out across the floor so defenders can't easily help each other." },
+  { term: "Horns", cat: "Team offense", def: "A half-court set with two players at the elbows, one in each corner, and the ball handler at the top." },
+  { term: "Floppy", cat: "Team offense", def: "A set where a shooter starts under the basket and picks to run off one of two screens on either side to get open." },
+  { term: "Slip", cat: "Team offense", def: "When a screener cuts to the rim before making contact, catching the defense switching or hedging too early." },
+  { term: "Ghost screen", cat: "Team offense", def: "A screen faked by running toward the ball handler and then away without setting it, to confuse the defenders." },
+  { term: "Dive", cat: "Team offense", def: "After setting a screen, the screener sprints straight to the rim, without pivoting open to the ball as in a classic roll. Coaches often call it 'set and dive'." },
+  { term: "Elevator screen", cat: "Team offense", def: "Two screeners stand side by side, then close together like elevator doors after a shooter runs through the gap." },
+  { term: "Transition", cat: "Team offense", def: "The moments after a change of possession, when one team pushes the ball up before the defense is set." },
+  { term: "Transition vs fast break", cat: "Team offense", def: "Every fast break is transition, but not every transition is a fast break. The fast break is the quickest, most aggressive form of transition." },
+  { term: "Backdoor cut", cat: "Off-ball", def: "A cut behind an overplaying defender toward the basket, away from the ball." },
+  { term: "V-cut", cat: "Off-ball", def: "Walk your defender toward the basket, then plant and burst back out to the wing to get open." },
+  { term: "L-cut", cat: "Off-ball", def: "Go up the lane, then cut sharply out toward the wing in an L shape." },
+  { term: "Curl", cat: "Off-ball", def: "Come off a screen and wrap tightly around it toward the basket." },
+  { term: "Flare", cat: "Off-ball", def: "Drift away from the ball off a screen to get open for a jump shot." },
+  { term: "Flash", cat: "Off-ball", def: "A quick cut into open space, usually the high post or the paint, to receive the ball." },
+  { term: "Shake", cat: "Off-ball", def: "Lift or slide along the three-point line to stay in the passer's line of sight when your defender helps." },
+  { term: "Relocate", cat: "Off-ball", def: "After passing, move to a new open spot instead of standing still." },
+  { term: "Seal", cat: "Off-ball", def: "Pin your defender behind you with your body so you're open for an entry pass." },
+  { term: "Off-ball screen", cat: "Off-ball", def: "Setting a pick for a teammate who doesn't have the ball." },
+  { term: "Spot up", cat: "Off-ball", def: "Set your feet in an open spot, ready to catch and shoot." },
+  { term: "Basket cut", cat: "Off-ball", def: "A hard cut straight to the rim from the perimeter, looking for a pass and a layup." },
+  { term: "Shallow cut", cat: "Off-ball", def: "A cut up toward the ball handler and then out to the perimeter, to clear space or receive a handoff." },
+  { term: "Duck in", cat: "Off-ball", def: "Stepping into the paint in front of your defender when the ball is on the wing, getting deep post position." },
+  { term: "Lift", cat: "Off-ball", def: "Moving up from the corner to the wing when the ball is driven toward you, to give the driver a passing target." },
+  { term: "Chest pass", cat: "Passing", def: "A two-handed pass pushed straight from your chest to a teammate's chest." },
+  { term: "Bounce pass", cat: "Passing", def: "A pass bounced off the floor about two-thirds of the way to the receiver." },
+  { term: "Overhead pass", cat: "Passing", def: "A two-handed pass thrown from above the head, to get over a defender or start a break." },
+  { term: "Skip pass", cat: "Passing", def: "A pass across the court that skips the nearest teammate and goes to the far side." },
+  { term: "Entry pass", cat: "Passing", def: "A pass into a teammate posting up near the basket." },
+  { term: "Outlet pass", cat: "Passing", def: "The first pass after a defensive rebound, usually to a guard near the sideline, to start the break." },
+  { term: "No-look pass", cat: "Passing", def: "A pass made while looking somewhere else, to fool the defense." },
+  { term: "Lob", cat: "Passing", def: "A high, arcing pass thrown over the defense." },
+  { term: "Wraparound pass", cat: "Passing", def: "A pass whipped around a defender's body, usually on a drive." },
+  { term: "Assist", cat: "Passing", def: "The pass that leads directly to a teammate's basket." },
+  { term: "Pocket pass", cat: "Passing", def: "A quick bounce pass between defenders, often to the screener rolling to the rim in a pick and roll." },
+  { term: "Baseball pass", cat: "Passing", def: "A long one-handed pass thrown from behind the ear, like throwing a baseball, to reach a teammate far down the court." },
+  { term: "Behind-the-back pass", cat: "Passing", def: "Passing by swinging the ball around your back with one hand, to get it past a defender who is in the passing lane." },
+  { term: "Touch pass", cat: "Passing", def: "Passing the ball on straight away as it arrives, without catching and holding it, to move it faster than the defense." },
+  { term: "Lead pass", cat: "Passing", def: "A pass thrown ahead of a moving teammate so they catch it in stride, without slowing down." },
+  { term: "Box out", cat: "Defense skills", def: "Using your body to seal an opponent away from the basket so you get the rebound." },
+  { term: "Help defense", cat: "Team defense", def: "Leaving your own player for a moment to stop a teammate's beaten defender." },
+  { term: "Zone defense", cat: "Team defense", def: "Each defender guards an area of the floor instead of one player." },
+  { term: "Full-court press", cat: "Team defense", def: "Pressuring the ball handler from the moment the ball is inbounded, all the way up the court." },
+  { term: "Man-to-man", cat: "Team defense", def: "Each defender guards one opposing player wherever they go." },
+  { term: "Defensive stance", cat: "Defense skills", def: "Feet wide, knees bent, back straight and hands active, ready to slide." },
+  { term: "Closeout", cat: "Defense skills", def: "Sprint out to a shooter, then chop your steps to arrive under control with a hand up." },
+  { term: "Deny", cat: "Defense skills", def: "Playing between your player and the ball to stop them from getting a pass." },
+  { term: "Double team", cat: "Team defense", def: "Two defenders guarding the ball handler at the same time." },
+  { term: "Trap", cat: "Team defense", def: "Two defenders pinning the ball handler, often in a corner or near half court." },
+  { term: "Switch", cat: "Team defense", def: "Two defenders swap the players they guard when a screen is set." },
+  { term: "Hedge", cat: "Team defense", def: "The screener's defender steps out to slow the ball handler, then recovers to their own player." },
+  { term: "2-3 zone", cat: "Team defense", def: "A zone with two defenders up top and three along the baseline, built to protect the paint." },
+  { term: "1-3-1 zone", cat: "Team defense", def: "A zone with one defender up top, three across the middle and one along the baseline, often used to trap the wings." },
+  { term: "Box-and-one", cat: "Team defense", def: "Four defenders play a box-shaped zone while the fifth guards the other team's best player man-to-man." },
+  { term: "Drop coverage", cat: "Team defense", def: "Against a pick and roll, the screener's defender drops back toward the rim, inviting a mid-range shot." },
+  { term: "Ice", cat: "Team defense", def: "Against a side pick and roll, the ball handler's defender stops them using the screen, pushing them toward the sideline." },
+  { term: "Rotation", cat: "Team defense", def: "Defenders shifting to cover for a teammate who has gone to help, so no one is left open." },
+  { term: "Stunt", cat: "Team defense", def: "A fake help move at the ball handler, then a quick recovery to your own player." },
+  { term: "Fight over the screen", cat: "Defense skills", def: "Staying attached to your player by going over the top of a screen." },
+  { term: "Go under", cat: "Defense skills", def: "Going behind a screen instead of over it, giving space to a weaker shooter." },
+  { term: "Steal", cat: "Defense skills", def: "Taking the ball away from the offense." },
+  { term: "Blocked shot", cat: "Defense skills", def: "Knocking away a shot attempt with your hand before it reaches the basket." },
+  { term: "Contest", cat: "Defense skills", def: "Getting a hand up toward the shooter's eyes and ball as they shoot, without fouling, to make the shot harder." },
+  { term: "Defensive slide", cat: "Defense skills", def: "Moving sideways in a low stance by pushing off the trail foot, without crossing your feet. Also called a shuffle." },
+  { term: "Turn and run", cat: "Defense skills", def: "When a driver gets past your hip, turning your body and sprinting to recover instead of sliding." },
+  { term: "Ball pressure", cat: "Defense skills", def: "Guarding the ball handler up close, with active hands and feet, to make every dribble and pass difficult." },
+  { term: "Defensive rebound", cat: "Defense skills", def: "Grabbing a missed shot at your own basket, which ends the other team's possession." },
+  { term: "Paint", cat: "Court areas", def: "The painted rectangle under the basket, also called the key or the lane." },
+  { term: "Elbow", cat: "Court areas", def: "Each corner where the free-throw line meets the side of the lane." },
+  { term: "Block", cat: "Court areas", def: "The small marked square on each side of the lane, close to the basket. Post players set up here." },
+  { term: "Corner three", cat: "Court areas", def: "A three-pointer from the corner, the shortest distance to the three-point line." },
+  { term: "Top of the key", cat: "Court areas", def: "The area just above the free-throw circle, straight out from the basket." },
+  { term: "Wing", cat: "Court areas", def: "The side areas of the half court, between the corner and the top of the key." },
+  { term: "Baseline", cat: "Court areas", def: "The end line behind each basket." },
+  { term: "Three-point line", cat: "Court areas", def: "The arc around the basket. Shots from behind it count for three. Also called the arc." },
+  { term: "The arc", cat: "Court areas", def: "Another name for the three-point line. 'Beyond the arc' means behind the line, in three-point range. Not the same as a shot's arc, which is how high the ball travels." },
+  { term: "Free-throw line", cat: "Court areas", def: "The line at the top of the paint where free throws are taken." },
+  { term: "Half-court line", cat: "Court areas", def: "The line across the middle of the court that splits it into frontcourt and backcourt." },
+  { term: "High post", cat: "Court areas", def: "The area around the free-throw line." },
+  { term: "Low post", cat: "Court areas", def: "The area near the block, close to the basket." },
+  { term: "Short corner", cat: "Court areas", def: "The spot along the baseline between the paint and the corner." },
+  { term: "Restricted area", cat: "Court areas", def: "The small arc under the basket where a defender can't draw a charge." },
+  { term: "Dunker spot", cat: "Court areas", def: "Just outside the paint along the baseline, where a big waits for a quick pass to dunk." },
+  { term: "Strong side", cat: "Court areas", def: "The side of the floor where the ball is." },
+  { term: "Weak side", cat: "Court areas", def: "The side of the floor away from the ball. Also called the help side." },
+  { term: "Sideline", cat: "Court areas", def: "The long boundary line on each side of the court." },
+  { term: "Frontcourt", cat: "Court areas", def: "The half of the court where your team attacks, with the basket you shoot at." },
+  { term: "Backcourt", cat: "Court areas", def: "The half of the court your team defends. Also a team's guards as a group." },
+  { term: "Center circle", cat: "Court areas", def: "The circle at half court where the opening jump ball takes place." },
+  { term: "Lane line", cat: "Court areas", def: "The lines along each side of the paint. Players line up on them for free throws." },
+  { term: "Slot", cat: "Court areas", def: "The gap between the wing and the top of the key." },
+  { term: "Nail", cat: "Court areas", def: "The spot at the middle of the free-throw line, often marked with a small dot." },
+  { term: "Mid-post", cat: "Court areas", def: "The area on the lane line between the low post and the high post." },
+  { term: "Hash mark", cat: "Court areas", def: "The short line on the lane line, just above the block, often used as a reference for where to stand." },
+  { term: "Logo", cat: "Court areas", def: "The team logo at half court. A 'logo three' is a shot taken from that far out." },
+  { term: "Travel", cat: "Rules", def: "Moving your pivot foot or taking too many steps while holding the ball." },
+  { term: "Double dribble", cat: "Rules", def: "Dribbling with both hands at once, or dribbling again after you have stopped." },
+  { term: "Carry", cat: "Rules", def: "Letting the ball rest in your palm or turning it over while dribbling. Also called palming." },
+  { term: "Shot clock", cat: "Rules", def: "The countdown, 24 seconds in the NBA and FIBA, to take a shot that hits the rim." },
+  { term: "Three seconds", cat: "Rules", def: "An attacking player may not stay in the paint for more than three seconds." },
+  { term: "Five seconds", cat: "Rules", def: "A closely guarded player holding the ball must pass, shoot or dribble within five seconds." },
+  { term: "Eight seconds", cat: "Rules", def: "A team has eight seconds to bring the ball over half court." },
+  { term: "Backcourt violation", cat: "Rules", def: "Taking the ball back over half court after your team has brought it into the frontcourt." },
+  { term: "Goaltending", cat: "Rules", def: "Touching a shot on its way down to the basket. The basket counts anyway." },
+  { term: "Charge", cat: "Rules", def: "An offensive foul for running into a defender who has already set their feet." },
+  { term: "Blocking foul", cat: "Rules", def: "A defensive foul for stepping into a driver's path without being set." },
+  { term: "Shooting foul", cat: "Rules", def: "A foul on a player in the act of shooting, which earns free throws." },
+  { term: "Technical foul", cat: "Rules", def: "A foul for unsporting behaviour or certain violations. The other team gets a free throw." },
+  { term: "Foul out", cat: "Rules", def: "Being sent out of the game after reaching the foul limit: five in FIBA, six in the NBA." },
+  { term: "Bonus", cat: "Rules", def: "After a team commits a set number of fouls in a period, each further foul gives free throws." },
+  { term: "Jump ball", cat: "Rules", def: "The referee tosses the ball up between two players, who try to tip it to a teammate." },
+  { term: "Personal foul", cat: "Rules", def: "Illegal contact with an opponent, such as pushing, holding or hitting their arm." },
+  { term: "Offensive foul", cat: "Rules", def: "A foul committed by the team with the ball, such as a charge or an illegal screen." },
+  { term: "Flagrant foul", cat: "Rules", def: "Unnecessary or excessive contact, punished with free throws and possession, and sometimes an ejection." },
+  { term: "Loose-ball foul", cat: "Rules", def: "A foul committed while neither team has control of the ball, often when going for a rebound." },
+  { term: "Kicked ball", cat: "Rules", def: "A violation for deliberately kicking or blocking the ball with your leg or foot." },
+  { term: "Basket interference", cat: "Rules", def: "Touching the ball or the rim while the ball is on or inside the rim, or reaching through the hoop." },
+  { term: "Lane violation", cat: "Rules", def: "Entering the lane too early during a free throw." },
+  { term: "Timeout", cat: "Rules", def: "A short stop in play called by a team to rest, talk or set up a play." },
+  { term: "Bucket", cat: "Slang", def: "A made basket. Also a player who scores easily." },
+  { term: "Brick", cat: "Slang", def: "A badly missed shot that clanks hard off the rim." },
+  { term: "Air ball", cat: "Slang", def: "A shot that misses the rim and the backboard completely." },
+  { term: "Swish", cat: "Slang", def: "A shot that drops through the net without touching the rim." },
+  { term: "Splash", cat: "Slang", def: "A smooth made jump shot, usually a three." },
+  { term: "Ankle breaker", cat: "Slang", def: "A move so sharp it makes the defender stumble or fall." },
+  { term: "Posterize", cat: "Slang", def: "Dunking over a defender so hard it looks like a poster." },
+  { term: "Dime", cat: "Slang", def: "A great assist." },
+  { term: "Board", cat: "Slang", def: "A rebound." },
+  { term: "Downtown", cat: "Slang", def: "Far out beyond the three-point line." },
+  { term: "Handles", cat: "Slang", def: "A player's dribbling skill." },
+  { term: "Lockdown", cat: "Slang", def: "Defense so tight it shuts a player down." },
+  { term: "Heat check", cat: "Slang", def: "A tough shot taken after making several in a row, to see if you're still hot." },
+  { term: "Rim protector", cat: "Slang", def: "A big who blocks or changes shots near the basket." },
+  { term: "Sixth man", cat: "Slang", def: "The first player off the bench." },
+  { term: "Perimeter player", cat: "Slang", def: "A player who works outside the paint, near or beyond the 3-point line: usually a point guard, shooting guard or small forward who shoots, handles and defends the arc." },
+  { term: "Clutch", cat: "Slang", def: "Playing your best in the final moments of a close game." },
+  { term: "Garbage time", cat: "Slang", def: "The end of a one-sided game, when the result is settled and reserves play." },
+  { term: "Stop on a dime", cat: "Slang", def: "Go from full speed to a complete stop instantly, balanced and ready to shoot, pass or attack. The defender keeps moving and you get space." },
+  { term: "Separation", cat: "Slang", def: "The space between you and your defender, created by moves like a step-back or a sudden stop." },
+  { term: "Buzzer beater", cat: "Slang", def: "A shot released just before time runs out that goes in after the buzzer." },
+  { term: "Cherry picking", cat: "Slang", def: "Staying near your own basket while the other team attacks, hoping for an easy layup." },
+  { term: "Coast to coast", cat: "Slang", def: "Grabbing a rebound and dribbling the full length of the court yourself to score." },
+  { term: "Dagger", cat: "Slang", def: "A late shot that puts the game out of reach." },
+  { term: "Glass", cat: "Slang", def: "The backboard. Going 'off the glass' means using it for a shot." },
+  { term: "Gym rat", cat: "Slang", def: "A player who spends every spare hour in the gym working on their game." },
+  { term: "Hot hand", cat: "Slang", def: "A player making shot after shot, who teammates keep feeding." },
+  { term: "Rock", cat: "Slang", def: "The ball." },
+  { term: "Triple-double", cat: "Slang", def: "Reaching ten or more in three stats (for example points, rebounds and assists) in one game." },
+  { term: "Cooked", cat: "Slang", def: "Badly beaten by a move, like getting your ankles broken." },
+];
+
+const YT_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1c.4-1.6.5-4.8.5-4.8s0-3.2-.5-4.8ZM9.7 15.1V8.9L15.5 12l-5.8 3.1Z"/></svg>';
+
+// Opens the YouTube app on phones via universal link; falls back to the browser.
+// One tag per term, shared by YouTube and Instagram: "Pick and roll" -> "pickandrollbasketball".
+// Use this exact tag on your own shorts so they land on these pages.
+const TAG_POSTFIX = "basketball";
+const tagBase = term => term.toLowerCase().replace(/[^a-z0-9]/g, "");
+const tagFor = term => tagBase(term) + TAG_POSTFIX;
+
+// YouTube: search the hoopslang channel (@hoopslangcom) for the term, e.g. "Pick and roll".
+const YT_CHANNEL = "https://www.youtube.com/@hoopslangcom";
+const ytQuery = term => term;
+const ytSearch = term =>
+  YT_CHANNEL + "/search?query=" + encodeURIComponent(ytQuery(term));
+
+// Instagram has no public search URL, so link to the term's hashtag page (also opens the app).
+const IG_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="6"/><circle cx="12" cy="12" r="4.6" fill="none" stroke="#000" stroke-width="2.2"/><circle cx="17.4" cy="6.6" r="1.4" fill="#000"/></svg>';
+const IG_LINE = '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg>';
+const igTag = term =>
+  "https://www.instagram.com/explore/tags/" + encodeURIComponent(tagFor(term)) + "/";
+
+const STAR = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4L2.8 9.5l6.4-.8z"/></svg>';
+
+// Favourites live in this browser only (localStorage), keyed by term name.
+const FAV_KEY = "hoopslang-favourites";
+let favs = new Set();
+try { favs = new Set(JSON.parse(localStorage.getItem(FAV_KEY) || "[]")); } catch (e) {}
+function saveFavs() { try { localStorage.setItem(FAV_KEY, JSON.stringify([...favs])); } catch (e) {} }
+const favCount = () => TERMS.filter(t => favs.has(t.term)).length;
+
+// Drills: each one lists the skills (term names above) it trains.
+// TODO: swap in the real Calendly link.
+const BOOKING_URL = "https://calendly.com/";
+const LEVELS = ["Beginner", "Intermediate", "Advanced"];
+const DRILLS = [
+  { name: "Mikan drill", level: "Beginner", time: "3 min", gear: "Hoop",
+    skills: ["Layup", "Hook shot"],
+    steps: ["Start under the rim, facing the baseline.", "Finish a right-hand layup off the right side of the backboard.", "Catch the ball out of the net before it bounces.", "Step across and finish left-handed on the left side.", "Keep alternating for 60 seconds, then rest and repeat."],
+    tip: "Keep the ball high. It should never drop below your chin." },
+  { name: "Two-step layup from the arc", level: "Beginner", time: "5 min", gear: "Hoop",
+    skills: ["Layup", "Speed dribble", "Downhill"],
+    steps: ["Start at half court in the middle of the floor, in line with the center of the lane.", "Dribble straight down the middle toward the basket with your right hand.", "When you reach the three-point line, pick the ball up.", "Take two long steps, right foot then left foot, and go straight up into a right-hand layup.", "Rebound, dribble back to half court and repeat. 5 makes with the right hand, then 5 with the left: left hand dribble, left foot then right foot, left-hand layup."],
+    tip: "Only two steps after the pick-up, so make them long and powerful. Build speed on the dribble, pick the ball up at the line, then cover the distance with big strides." },
+  { name: "Toss, catch and two-step layup", level: "Beginner", time: "5 min", gear: "Hoop",
+    skills: ["Layup", "Downhill"],
+    steps: ["Start a few steps behind the three-point line in the middle of the floor, in line with the center of the lane.", "Toss the ball out ahead of you with backspin so it lands just before the arc and bounces up.", "Run onto it and catch it with two hands right at the arc. No dribble.", "Take two long steps, right foot then left foot, and go straight up into a right-hand layup.", "Rebound, jog back and repeat. 5 makes with the right hand, then 5 with the left: left foot then right foot, left-hand layup."],
+    tip: "Catch on the move, already heading to the rim. Don't slow down for the catch: the ball should land in your hands as your first step goes down." },
+  { name: "Form shooting", level: "Beginner", time: "10 min", gear: "Hoop",
+    skills: ["Jumper", "Free throw"],
+    steps: ["Stand one big step from the rim, straight in front of it.", "Shoot one-handed with your guide hand off the ball.", "Make 5 in a row, then take one step back.", "Add your guide hand once you reach the free-throw line.", "Finish with 10 free throws."],
+    tip: "Elbow under the ball, and hold your follow-through until the ball lands." },
+  { name: "One-hand ladder", level: "Beginner", time: "10 min", gear: "Hoop",
+    skills: ["Shooting line", "Follow-through", "Arc"],
+    steps: ["Stand one step in front of the rim, straight on. Guide hand behind your back.", "Shoot one-handed until you make 5 in a row. A miss resets the count.", "Take one step back and repeat. Four spots in a straight line out from the rim.", "Add your guide hand at the last spot.", "Finish with 10 free throws and count your makes."],
+    tip: "Count makes, not shots. If you miss a lot, move closer: you are building the feel of a make." },
+  { name: "Arc check", level: "Beginner", time: "5 min", gear: "Hoop, partner",
+    skills: ["Arc", "Follow-through"],
+    steps: ["A partner stands one big step in front of you with a hand up.", "Shoot over the hand and still make it.", "Five makes, then the partner raises the hand higher.", "On your own, shoot over a broom held in a chair instead."],
+    tip: "Shoot up, not out. A high, soft shot has a bigger target as it drops in." },
+  { name: "Bank shot box", level: "Beginner", time: "5 min", gear: "Hoop",
+    skills: ["Bank shot", "Shooting line"],
+    steps: ["Start on the block at a 45-degree angle to the backboard.", "Aim for the top near corner of the square.", "Make 5 from each side.", "Take one step out and repeat."],
+    tip: "Pick the spot on the glass before you shoot, and keep your eyes on it." },
+  { name: "Tennis ball overload", level: "Intermediate", time: "5 min", gear: "Ball, tennis ball",
+    skills: ["Overload training", "Control dribble", "Handles"],
+    steps: ["Dribble with your right hand, a tennis ball in your left.", "Toss the tennis ball up and catch it while you keep dribbling.", "Switch hands after 30 seconds.", "Next set: toss against a wall and catch the rebound.", "Finish with 30 seconds of normal one-ball dribbling."],
+    tip: "Start slowly. If you lose the basketball, toss the tennis ball lower until you are in control again." },
+  { name: "Help-side finishing", level: "Intermediate", time: "10 min", gear: "Hoop, cone",
+    skills: ["Euro step", "Pro hop", "Floater", "Power layup"],
+    steps: ["Put a cone in the lane as a help defender.", "Drive from the wing and finish with a euro step around the cone.", "Next rep: pro hop beside the cone, then a power finish off two feet.", "Next rep: a floater released before you reach the cone.", "5 of each from both sides."],
+    tip: "Carry the ball on the side away from the cone, and chin it when you land." },
+  { name: "Pick and roll basics", level: "Intermediate", time: "10 min", gear: "Hoop, partner",
+    skills: ["Pick and roll", "Pocket pass", "Off-ball screen", "Dive"],
+    steps: ["Ball handler at the top, screener comes up and sets the screen with feet still.", "Handler waits, then comes off shoulder to shoulder toward the elbow.", "Screener rolls to the rim. Handler hits the roll with a bounce pass, or pulls up if open.", "Next reps: screener pops, then slips, then dives.", "Swap roles every 5 reps."],
+    tip: "Set it up first: walk your defender away, then use the screen. Read the screener's defender before you choose." },
+  { name: "Two-ball dribbling", level: "Intermediate", time: "5 min", gear: "Two balls",
+    skills: ["Pound dribble", "Change of pace", "Handles", "Overload training"],
+    steps: ["Dribble two balls at the same time, both hitting the floor together.", "Switch to alternating bounces.", "Then one high, one low.", "Walk forward and back while keeping both alive.", "30 seconds per pattern."],
+    tip: "Eyes up. Pound hard so the ball comes back to your hand quickly." },
+  { name: "Cone zig-zag", level: "Beginner", time: "5 min", gear: "Cones",
+    skills: ["Killer crossover", "Between the legs", "Behind the back"],
+    steps: ["Set 5 cones in a zig-zag, about 3 m apart.", "Dribble to each cone and change hands with a crossover.", "Second trip: between the legs at every cone.", "Third trip: behind the back.", "Jog back and go again."],
+    tip: "Change direction low and sharp, close to the cone, like it's a defender." },
+  { name: "Hesitation and go", level: "Intermediate", time: "5 min", gear: "Cone",
+    skills: ["Hesitation", "Change of pace", "Stop and go"],
+    steps: ["Dribble at half speed toward a cone at the three-point line.", "One step before the cone, slow down and raise your eyes and shoulders.", "Explode past the cone with a long first stride.", "Finish at the rim.", "5 reps from each wing."],
+    tip: "Sell the slowdown with your head and shoulders. The burst is what wins it." },
+  { name: "First step attack", level: "Intermediate", time: "5 min", gear: "Cone, hoop",
+    skills: ["First step", "Jab step", "Direct drive", "Crossover step"],
+    steps: ["Toss the ball out to the wing with backspin, catch it and get into triple threat. A cone is your defender.", "Jab step, then go with a direct drive past the cone on the same side.", "Next rep: jab, then a crossover step to the other side.", "Take no more than one dribble to get to the rim.", "10 reps each way."],
+    tip: "Your first step should go past the defender's hip, not just toward them." },
+  { name: "Pull-up series", level: "Intermediate", time: "10 min", gear: "Hoop",
+    skills: ["Pull-up jumper", "Two-foot stop", "One-two step"],
+    steps: ["Start at half court.", "Dribble hard to the elbow.", "Stop with a two-foot stop and rise into a jumper.", "Next rep: stop with a one-two step instead.", "5 makes from each elbow with each stop."],
+    tip: "Stop on balance. Your shot should go straight up, not drift forward." },
+  { name: "Five-spot catch and shoot", level: "Intermediate", time: "10 min", gear: "Hoop",
+    skills: ["Catch and shoot", "Spot up", "Three-pointer"],
+    steps: ["Mark five spots: both corners, both wings and the top.", "Stand a step in front of the first spot and spin the ball out to it with backspin.", "Step into the catch with your feet already set and shoot.", "Move to the next spot after 2 makes.", "Start at mid-range, then move out to the three-point line."],
+    tip: "Show your hands as a target and have your feet ready before the ball arrives." },
+  { name: "Roll outs", level: "Beginner", time: "10 min", gear: "Hoop",
+    skills: ["One-two step", "Hop into shot", "Shot pocket", "Jumper"],
+    steps: ["Stand under the rim and roll the ball along the floor out toward the elbow.", "Chase it, scoop it up on the run and bring it straight into your shot pocket.", "Land with a one-two step, inside foot first, facing the rim, and shoot.", "Next rep: land with a hop into the shot, both feet at once.", "Rebound, roll it to a new spot (wing, corner, top) and go again. 5 makes from each spot."],
+    tip: "Get low to pick the ball up, and have your feet turned to the rim before you rise. Sprint to the ball, then slow down to land balanced." },
+  { name: "Jump stop finishing", level: "Beginner", time: "5 min", gear: "Hoop",
+    skills: ["Two-foot stop", "Up and under", "Step-through"],
+    steps: ["Drive from the wing and land with a two-foot stop in front of the rim.", "Finish with a strong two-hand layup.", "Next rep: add a pump fake first.", "Then pump fake and step through for the finish.", "5 reps each from both sides."],
+    tip: "Chin the ball when you land so nobody can strip it." },
+  { name: "Euro step lanes", level: "Intermediate", time: "5 min", gear: "Hoop, cone",
+    skills: ["Euro step", "Layup"],
+    steps: ["Put a cone in the lane as a defender.", "Drive from the top with your right hand, heading to the right of the cone.", "Pound your last dribble hard into the floor so the ball pops up strong into your hands.", "Pick it up, take your first step right, then sweep the ball and your second step across to the left of the cone.", "Finish with the hand away from the cone.", "5 reps each way. Going left, drive with your left hand, pound the last dribble, then sweep right."],
+    tip: "The strong last bounce is the key: it brings the ball up fast and under control before you take it across. Make the first step big and believable, and protect the ball as you sweep it." },
+  { name: "Floater ladder", level: "Advanced", time: "10 min", gear: "Hoop",
+    skills: ["Floater", "Runner"],
+    steps: ["Drive down the lane from the top.", "Release a one-handed floater from just inside the free-throw line.", "Take one step closer each make.", "Mix in runners off one foot.", "Work both hands."],
+    tip: "Release early and high. Soft touch, with the ball coming down onto the rim." },
+  { name: "Wall passing", level: "Beginner", time: "5 min", gear: "Wall",
+    skills: ["Chest pass", "Bounce pass", "Overhead pass"],
+    steps: ["Stand about 3 m from a wall and mark a target at chest height.", "30 chest passes at the target.", "30 bounce passes, aimed so the ball comes back to your waist.", "30 overhead passes.", "Step back a metre and repeat."],
+    tip: "Step into every pass and finish with your thumbs pointing down." },
+  { name: "V-cut and catch", level: "Beginner", time: "5 min", gear: "Hoop",
+    skills: ["V-cut", "Triple threat", "Catch and shoot"],
+    steps: ["Start on the wing holding the ball.", "Walk an imaginary defender toward the block.", "Plant your inside foot, burst back out and toss the ball ahead of you to the wing.", "Catch in triple threat facing the basket.", "Shoot, or jab and drive."],
+    tip: "Slow in, fast out. The change of speed gets you open, not the distance." },
+  { name: "Backdoor read", level: "Intermediate", time: "5 min", gear: "Hoop, cone",
+    skills: ["Backdoor cut"],
+    steps: ["Put a cone on the wing as an overplaying defender.", "Step out toward the cone as if to get the ball.", "Plant your outside foot and cut hard behind the cone to the rim.", "Bounce the ball ahead of you into the lane and catch it in stride.", "Finish with a layup. 5 reps from each side."],
+    tip: "Sell the step out, then make the cut sharp and fast." },
+  { name: "Closeout drill", level: "Beginner", time: "5 min", gear: "Cones",
+    skills: ["Closeout", "Defensive stance"],
+    steps: ["Put a cone on each wing and in the corner as shooters.", "Start under the basket.", "Sprint toward a cone, then chop your steps for the last few feet.", "Arrive in a stance with one hand high, then slide back to the paint.", "Go to the next cone. 3 rounds."],
+    tip: "Sprint the first two-thirds, then short, choppy steps. Never fly past the shooter." },
+  { name: "Zig-zag slides", level: "Beginner", time: "5 min", gear: "Full court",
+    skills: ["Defensive stance"],
+    steps: ["Start in the corner of the baseline in a stance.", "Slide at an angle toward the sideline.", "Drop-step and change direction.", "Zig-zag all the way up the court.", "Sprint back and repeat."],
+    tip: "Stay low and never cross your feet. Your head shouldn't bounce." },
+  { name: "Step-back series", level: "Intermediate", time: "10 min", gear: "Hoop",
+    skills: ["Step-back", "Same-foot step-back", "Side-step three", "Deep three"],
+    steps: ["Start one step inside the three-point line on the wing.", "Two hard dribbles at the rim, then push back off your front foot into a step-back three.", "Next rep: a same-foot step-back, pushing off and landing on the same foot before the shot.", "Next rep: a side-step three instead, hopping sideways off the dribble.", "Finish the set with 5 shots a step behind the line.", "5 makes of each from both wings."],
+    tip: "Push back off the front foot and land balanced. Sell the drive first so the defender sags." },
+  { name: "Lunge and between-the-legs jumper", level: "Intermediate", time: "5 min", gear: "Hoop, cone",
+    skills: ["Jab step", "Between the legs", "Retreat dribble", "Pull-up jumper"],
+    steps: ["Put a cone at the elbow as your defender. Start a few steps above it, dribbling with your right hand.", "Take a big lunge forward with your left foot toward the cone, as if you are attacking.", "Push back off your left foot and bring the ball between your legs backwards, from right hand to left, as you retreat.", "Gather straight into your shot and rise into a jumper.", "5 makes from each elbow, then flip it: right foot lunge, ball in your left hand."],
+    tip: "Sell the lunge with your head and shoulders low. The harder you push back from it, the more space you get for the shot." },
+  { name: "Lunge and between-the-legs drive", level: "Intermediate", time: "5 min", gear: "Hoop, cone",
+    skills: ["Jab step", "Between the legs", "Retreat dribble", "Downhill", "Layup"],
+    steps: ["Put a cone at the elbow as your defender. Start a few steps above it, dribbling with your right hand.", "Take a big lunge forward with your left foot toward the cone, as if you are attacking.", "Push back off your left foot and bring the ball between your legs backwards, from right hand to left, as you retreat.", "Attack straight away: go downhill past the cone, dribbling with your left hand, and finish with a left-hand layup.", "5 makes from each elbow, then flip it: right foot lunge, ball in your left hand, finish right-handed."],
+    tip: "Don't stop after the cross. Go the moment the ball lands in your left hand, while the defender is still reacting to the retreat." },
+  { name: "Lunge, crossover and same-foot step-back", level: "Advanced", time: "10 min", gear: "Hoop, cone",
+    skills: ["Killer crossover", "Same-foot step-back", "Step-back", "Jumper"],
+    steps: ["Put a cone at the top of the key as your defender. Start a few steps above it on the wing side, dribbling with your right hand.", "Take a long lunge forward with your left foot toward the cone, as if you are attacking.", "Cross the ball over low from your right hand to your left as you push back off that left foot.", "Hop back and land on the same left foot first, then bring your right foot down beside it, squared up to the rim.", "Rise straight into a jumper. 5 makes from each side, then flip it: right foot lunge, cross from left to right, land on the right foot."],
+    tip: "The long lunge sells the drive and the crossover pulls the defender with it. Land on the same foot you lunged with, shoulders square, and go straight up." },
+  { name: "Spin and finish", level: "Intermediate", time: "5 min", gear: "Cone, hoop",
+    skills: ["Spin move", "Half-spin", "Downhill", "Reverse layup"],
+    steps: ["Put a cone at the elbow as a defender.", "Drive at the cone with your right hand.", "Plant your left foot and spin, pulling the ball tight to your hip.", "Come out of the spin going downhill and finish with a reverse layup.", "Next rep: half-spin. Stop with your back to the cone, pivot back the way you came and finish with a layup.", "5 reps each way of both."],
+    tip: "Plant hard and pull the ball tight. A wide ball on a spin gets stolen." },
+  { name: "In and out to Shamgod", level: "Advanced", time: "5 min", gear: "Cone",
+    skills: ["In and out", "Shamgod"],
+    steps: ["Dribble at a cone at half speed.", "Hit an in and out: push the ball in, then snap it back out with the same hand.", "Next trip: push the ball out wide with your right hand.", "Pull it back across with your left as you step past the cone (Shamgod).", "10 reps of each, both hands."],
+    tip: "Sell the in and out with your head and shoulders, not just the ball." },
+  { name: "Pressure release", level: "Intermediate", time: "5 min", gear: "Cones",
+    skills: ["Retreat dribble", "Snatch back", "Pullback crossover"],
+    steps: ["Dribble forward toward a cone as if a defender is pressing you.", "As you reach it, take two retreat dribbles backwards, ball protected.", "Then a snatch back: yank the ball back and hop away to create space.", "Attack again straight away with a crossover.", "10 reps."],
+    tip: "Keep your body between the defender and the ball while you back out. Eyes stay up." },
+  { name: "Triple threat series", level: "Beginner", time: "5 min", gear: "Hoop",
+    skills: ["Triple threat", "Rocker step", "Pump fake"],
+    steps: ["Toss the ball out to the wing with backspin and catch it in triple threat: ball on your hip, knees bent.", "Pump fake, then drive past on one dribble.", "Next rep: rocker step. Jab, rock back as if to shoot, then drive.", "Next rep: pump fake, then shoot.", "5 reps of each from both wings."],
+    tip: "Your pump fake should look exactly like your shot, but your legs stay bent." },
+  { name: "Post footwork series", level: "Intermediate", time: "10 min", gear: "Hoop",
+    skills: ["Post up", "Seal", "Turnaround jumper", "Fadeaway"],
+    steps: ["Stand on the block and seal an imaginary defender with your hips, then spin the ball to yourself with backspin so it comes back to you.", "Catch with two hands, back to the basket, in a wide, low stance.", "Turn baseline into a turnaround jumper.", "Next rep: turn middle into a fadeaway.", "5 makes from each block."],
+    tip: "Wide base and low hips before the catch. Catch with two hands and chin the ball." },
+  { name: "Elbow and block shooting", level: "Beginner", time: "10 min", gear: "Hoop",
+    skills: ["Mid-range", "Bank shot", "Hop into shot"],
+    steps: ["Start on the right block, at an angle to the board.", "Shoot bank shots off the top corner of the square.", "Move to the elbow and shoot mid-range jumpers.", "Toss the ball out, hop into a two-foot landing and shoot.", "10 makes from each spot."],
+    tip: "From the angles, aim for the top corner of the square on the backboard." },
+  { name: "Finishing package", level: "Intermediate", time: "10 min", gear: "Hoop",
+    skills: ["Finger roll", "Scoop layup", "Reverse layup"],
+    steps: ["Drive from the wing on the right side.", "Finish with a finger roll, palm facing up.", "Next rep: a scoop layup, releasing low and early.", "Next rep: go under the rim and finish a reverse layup.", "5 of each, from both sides with both hands."],
+    tip: "Use the rim to protect the ball on reverses. Release scoops before the shot blocker arrives." },
+  { name: "Tip and putback", level: "Beginner", time: "5 min", gear: "Hoop",
+    skills: ["Offensive rebound", "Putback"],
+    steps: ["Toss the ball high off the backboard.", "Jump and grab it at its highest point.", "Go straight back up without bringing the ball down.", "Score the putback off the glass.", "Alternate sides for 60 seconds."],
+    tip: "Two hands, chin the ball, and go back up quickly. Don't dribble." },
+  { name: "Dunk progression", level: "Advanced", time: "10 min", gear: "Hoop",
+    skills: ["Dunk"],
+    steps: ["Warm up with 10 rim or net touches off two feet.", "Next, 10 touches off one foot from a short run-up.", "Try to dunk a smaller ball, like a volleyball or tennis ball.", "Then a basketball, one-handed off two feet.", "Stop when you get tired. Jumping on tired legs is how injuries happen."],
+    tip: "Palm the ball if you can, and jump up, not forward." },
+  { name: "Shooting off screens", level: "Advanced", time: "10 min", gear: "Hoop, cone as a screen",
+    skills: ["Shot off a screen", "Curl", "Flare"],
+    steps: ["Put a cone at the elbow as the screen.", "Start low, holding the ball, and come off the cone shoulder to shoulder.", "Curl tight toward the rim, toss the ball ahead, catch and shoot or finish.", "Next rep: flare away from the cone to the wing, toss to yourself and shoot.", "5 makes of each."],
+    tip: "Come off the screen tight, with no gap between you and the cone." },
+  { name: "Cutting series", level: "Beginner", time: "5 min", gear: "Hoop",
+    skills: ["L-cut", "Flash"],
+    steps: ["Start on the block holding the ball.", "Walk up the lane, then cut sharply out to the wing (L-cut), tossing the ball ahead to catch.", "Catch and face the basket, then shoot.", "Next rep: flash from the weak side into the high post and catch your own toss.", "10 reps of each."],
+    tip: "Sharp corners. Plant and push off, and catch already facing the basket." },
+  { name: "Self alley-oop", level: "Intermediate", time: "5 min", gear: "Hoop",
+    skills: ["Lob", "Alley-oop"],
+    steps: ["Stand on the wing, a few steps from the backboard.", "Lob the ball softly off the backboard, high and to the rim side.", "Run in, catch it in the air and finish before landing, or catch and lay it in.", "Start with a soft toss and slow timing, then add speed.", "10 reps from each side."],
+    tip: "Toss to a spot, not straight at the rim." },
+  { name: "Screen navigation", level: "Intermediate", time: "5 min", gear: "Two cones",
+    skills: ["Fight over the screen", "Go under"],
+    steps: ["Set two cones a few metres apart as screens.", "Slide in a stance as if guarding a ball handler.", "At the first cone, get skinny and fight over the top, staying low.", "At the second, go under it and meet your imaginary player on the other side.", "Do 5 trips, then switch directions."],
+    tip: "Get skinny: turn your shoulders and push through. Go over against shooters, under against drivers." },
+  { name: "Block timing", level: "Advanced", time: "5 min", gear: "Hoop",
+    skills: ["Blocked shot"],
+    steps: ["Stand a step from the rim.", "Toss the ball high off the backboard.", "Time your jump to pin the ball against the board at its highest point.", "Use your hand nearest the ball and land balanced.", "10 reps on each side."],
+    tip: "Go straight up with your arm high. Pin it to the glass, don't swing down." },
+  { name: "Power finish and one", level: "Intermediate", time: "10 min", gear: "Hoop",
+    skills: ["And-one"],
+    steps: ["Drive from the wing with two hard dribbles.", "Gather the ball with two hands and jump off two feet.", "Lead with your inside shoulder as if a defender is hitting you, and finish high off the glass.", "After every make, walk to the line and shoot one free throw: that's your and-one.", "10 finishes from each side."],
+    tip: "Expect the contact. Strong core, ball high, eyes on the rim the whole way." },
+  { name: "Pass on the move", level: "Intermediate", time: "5 min", gear: "Wall",
+    skills: ["Wraparound pass", "No-look pass", "Assist"],
+    steps: ["Mark two targets on a wall: one at chest height, one at waist height.", "Dribble toward the wall and, on your second dribble, hit a target with a one-hand push pass.", "Next trip: a wraparound pass, swinging the ball around an imaginary defender's hip.", "Next trip: look at one target and pass to the other (no-look).", "10 of each, both hands."],
+    tip: "Pass off the dribble without picking the ball up first. A good assist arrives on time, on target." },
+  { name: "Long passes", level: "Intermediate", time: "5 min", gear: "Hoop, cones",
+    skills: ["Outlet pass", "Skip pass", "Entry pass"],
+    steps: ["Toss the ball off the backboard and rebound it high.", "Pivot to the sideline and throw a two-hand overhead outlet so it lands near a cone at half court.", "Jog after it. From the wing, throw a skip pass so it lands by a cone in the far corner.", "From the wing, throw a bounce entry pass to a cone on the block.", "5 rounds."],
+    tip: "Pivot away from where the defense would be before you throw. Long passes go overhead, flat and firm." },
+  { name: "Shoot and box out", level: "Beginner", time: "5 min", gear: "Hoop",
+    skills: ["Box out"],
+    steps: ["Shoot from the elbow.", "As the ball leaves your hand, turn to find an imaginary opponent coming in.", "Hit, turn and sit: forearm contact, pivot to put your back on them, wide base, hips low.", "Hold for a count of one, then go get the rebound.", "15 reps from different spots."],
+    tip: "Make contact first, then go for the ball. Wide base, low hips." },
+  { name: "Deny and jump the lane", level: "Intermediate", time: "5 min", gear: "Cones, ball",
+    skills: ["Deny", "Steal"],
+    steps: ["Put one cone at the top as the passer and one on the wing as your player.", "Slide up and down the wing in a deny stance: one hand and one foot in the passing lane.", "Every few slides, roll the ball from the top cone toward the wing.", "Jump the lane, scoop the ball up on the move and dribble the other way for a layup.", "10 reps from each side."],
+    tip: "Palm toward the ball, thumb down. React to the ball, not to your own feet." },
+  { name: "Shake and relocate", level: "Beginner", time: "5 min", gear: "Hoop",
+    skills: ["Shake", "Relocate"],
+    steps: ["Start on the wing with the ball.", "Spin the ball out toward the slot with backspin, as if passing to a teammate.", "Shake down the line to the corner and catch the ball as it rolls back to you.", "Shoot. Next rep: after your toss, relocate to the opposite wing instead.", "10 reps."],
+    tip: "Move on the toss, not after. Land with your feet set and your hands ready." },
+  { name: "Screen and roll", level: "Beginner", time: "5 min", gear: "Hoop, cone",
+    skills: ["Off-ball screen"],
+    steps: ["Put a cone on the wing as the defender you are screening.", "Sprint to the cone and set a legal screen: jump stop, wide base, arms crossed in front.", "Hold the screen for a count of two.", "Roll hard to the rim, toss the ball ahead and finish. Next rep: pop out for a jumper.", "10 reps."],
+    tip: "Stop still before contact. A moving screen is a foul." },
+  { name: "Speed and control", level: "Beginner", time: "5 min", gear: "Cones",
+    skills: ["Speed dribble", "Control dribble"],
+    steps: ["Set one cone at each baseline and four cones in a line down the middle of the court, about 3 m apart.", "Speed dribble from the baseline to the first cone, pushing the ball out ahead of you.", "At the cones, switch to a control dribble: low, tight, off arm up, weaving in and out.", "After the last cone, speed dribble to the far baseline.", "4 trips with each hand."],
+    tip: "Push the ball ahead on the speed dribble, never beside your feet. Lower it the moment you get close to a cone." },
+  { name: "Double cross and hang", level: "Intermediate", time: "5 min", gear: "Cone",
+    skills: ["Double crossover", "Hang dribble", "Killer crossover"],
+    steps: ["Put a cone at the top of the key as your defender.", "Dribble toward it and hit a double crossover: right to left, then straight back to the right.", "Next trip: a hang dribble. Hold the ball at the top of the bounce and lift your eyes to the rim.", "Then explode past the cone with a killer crossover.", "10 reps of each combo."],
+    tip: "The second crossover is the one that beats the defender. Make it lower and quicker than the first." },
+  { name: "Pivot series", level: "Beginner", time: "5 min", gear: "Hoop",
+    skills: ["Front pivot", "Reverse pivot", "Sweep through", "Triple threat"],
+    steps: ["Toss the ball out to the elbow with backspin and catch it with a two-foot stop.", "Front pivot to face the basket and get into triple threat.", "Next rep: reverse pivot to face the basket.", "From triple threat, sweep the ball low across your body and drive in one dribble for a layup.", "5 reps each way from both elbows."],
+    tip: "Your pivot foot stays glued to the floor. Pivot on the ball of your foot, not the heel." },
+  { name: "Pro hop finishes", level: "Intermediate", time: "10 min", gear: "Hoop, cone",
+    skills: ["Pro hop", "Power layup", "Inside-hand layup"],
+    steps: ["Put a cone in the lane as a help defender.", "Drive from the wing and hop off one foot, landing on two feet beside the cone.", "Finish with a power layup off two feet, ball held tight with both hands.", "Next rep: after the hop, finish with your inside hand, the one nearest the middle.", "5 reps of each from both sides."],
+    tip: "Land balanced on both feet and chin the ball. From there you can go up either side." },
+  { name: "Wrong-foot finishes", level: "Advanced", time: "5 min", gear: "Hoop",
+    skills: ["Wrong-foot layup", "Layup"],
+    steps: ["Start on the right wing.", "Drive in and finish a normal right-hand layup off your left foot.", "Next rep: take off from your right foot and still finish right-handed.", "Switch to the left side and repeat with your left hand.", "10 of each from both sides."],
+    tip: "Take off a beat earlier than normal. The point is to finish before a shot blocker's timing is ready." },
+  { name: "Post moves package", level: "Intermediate", time: "10 min", gear: "Hoop",
+    skills: ["Drop step", "Dream shake", "Baby hook", "Up and under"],
+    steps: ["Stand on the block, spin the ball out to yourself with backspin and catch it with your back to the basket.", "Drop step baseline: swing your back foot around and go up strong.", "Next rep: shoulder fake middle, then a baby hook over your imaginary defender.", "Next rep: dream shake. Fake baseline, pivot middle, pump fake, then step through.", "5 makes of each from both blocks."],
+    tip: "Sell every fake with your shoulders and eyes. Stay low until you go up." },
+  { name: "One-hand arc shooting", level: "Beginner", time: "10 min", gear: "Hoop",
+    skills: ["Shot pocket", "Follow-through", "Arc", "Set shot"],
+    steps: ["Stand a step in front of the rim, ball in your shot pocket.", "Shoot one-handed, aiming for a high arc that drops into the rim.", "Hold your follow-through until the ball lands.", "Make 5, then take a step back. Keep going until you reach the free-throw line.", "Finish with 10 set shots from the line."],
+    tip: "Shoot up, not out. If the ball stays flat, lift your elbow higher at release." },
+  { name: "Face-up series", level: "Intermediate", time: "10 min", gear: "Hoop",
+    skills: ["Face-up jumper", "Jab step", "Reverse pivot"],
+    steps: ["Spin the ball out to the mid-post with backspin and catch it with your back to the basket.", "Reverse pivot to face the rim and get into triple threat.", "Rise straight into a face-up jumper.", "Next rep: face up, jab step, then shoot.", "5 makes of each from both sides."],
+    tip: "Get your eyes on the rim as you turn. Shoot once you've squared up, not while still turning." },
+  { name: "Cut and finish", level: "Intermediate", time: "10 min", gear: "Hoop, cones",
+    skills: ["Basket cut", "Shallow cut", "Duck in", "Lift"],
+    steps: ["Put a cone at the top as your passer. Start on the wing with the ball.", "Toss the ball toward the lane, basket cut hard to the rim, catch it and finish.", "Next rep: start in the corner, lift to the wing, catch your own toss and shoot.", "Next rep: start on the wing, duck in to the block, catch and finish.", "Next rep: shallow cut up toward the cone and out to the wing, then shoot. 5 of each."],
+    tip: "Cut with purpose. A slow cut is easy to guard. Change speed at every corner." },
+  { name: "Defensive footwork", level: "Beginner", time: "5 min", gear: "Cones",
+    skills: ["Defensive slide", "Turn and run", "Ball pressure", "Contest"],
+    steps: ["Set three cones in a line along the free-throw line extended.", "Defensive slide from cone to cone and back, with active hands for ball pressure.", "At the end, turn and run to the baseline as if a driver has beaten you.", "Sprint back out and finish with a contest: high hand up, no jump forward.", "5 rounds."],
+    tip: "Turn and run as soon as the driver is past your hip. Sliding then is too slow." },
+  { name: "Rebound and outlet", level: "Beginner", time: "5 min", gear: "Hoop, cone",
+    skills: ["Defensive rebound", "Outlet pass", "Baseball pass"],
+    steps: ["Put a cone at half court near the sideline.", "Toss the ball high off the backboard and grab it at its highest point.", "Land wide, chin the ball and pivot toward the sideline.", "Throw a two-hand outlet so it lands near the cone. Next rep: a one-hand baseball pass.", "Chase the ball down. 10 reps."],
+    tip: "Chin the ball on the landing. Look up the court before you pivot." },
+  { name: "Cone target passing", level: "Intermediate", time: "5 min", gear: "Cones",
+    skills: ["Lead pass", "Pocket pass", "Behind-the-back pass", "Touch pass"],
+    steps: ["Set two cones about a metre apart as a gate, 5 m ahead of you.", "Pocket pass: a bounce pass through the gate, then sprint onto the ball.", "Lead pass: throw ahead of the gate so you catch it in stride.", "Behind-the-back pass: dribble at the gate and pass the ball around your back through it.", "Touch pass: toss the ball off the backboard and tap it straight on to a cone target without holding it. 10 of each."],
+    tip: "Pass to where the target is going, not where it is now." },
+  { name: "Clutch shooting", level: "Intermediate", time: "10 min", gear: "Hoop",
+    skills: ["Buzzer beater", "Clutch", "Free throw"],
+    steps: ["Start at half court with the ball.", "Count down out loud from 3. Get to a spot and shoot before you reach zero.", "Run back to half court for the next rep.", "After every 5 reps, shoot 2 free throws while still breathing hard.", "3 rounds. Keep score."],
+    tip: "Take one dribble fewer than you think. Rushing the shot is how you miss, not the time." },
+  { name: "Coast to coast", level: "Intermediate", time: "5 min", gear: "Hoop",
+    skills: ["Coast to coast", "Defensive rebound", "Speed dribble"],
+    steps: ["Toss the ball off the backboard and grab the rebound.", "Pivot to the sideline and speed dribble the full court.", "Finish with a layup at the far basket.", "Rebound your own shot and come straight back the other way.", "4 trips, then rest. Use your weak hand on the second set."],
+    tip: "Three or four dribbles per half court. Push the ball ahead and run." },
+];
+
+// Coaching guide: one chapter per card. Teach-it items starting with "Label:" get a bold label.
+const GROUPS = ["Shooting", "Ball-handling", "Scoring", "Planning"];
+const GUIDE = [
+  { n: 1, title: "Shooting foundations", group: "Shooting",
+    lede: "Every shot is built on the same base: balanced feet, a straight line from foot to ball to rim, and the same release every time. Teach this first and protect it in every drill.",
+    teach: ["Base: feet about shoulder-width, shooting foot slightly ahead, toes turned a little toward the rim.", "Bend: knees bend before the catch, not after. The legs give the power.", "Shot pocket: the ball starts in the same place every time.", "Hand: ball on the finger pads, guide hand on the side, not pushing.", "Elbow: under the ball and in line with the rim.", "Release: extend up and snap the wrist. Index and middle fingers last.", "Follow-through: hold it until the ball lands.", "Land: on the spot you took off from. Drifting means the base was off."],
+    cues: ["Feet set", "Elbow under", "Up, not out", "Hold it", "Land soft"],
+    faults: [["Misses left or right", "Elbow or guide hand off the shooting line", "Shoot one-handed close in. Check the guide hand comes off cleanly."], ["Flat shot, front rim", "Pushing the ball forward, little leg bend", "Cue “up, not out”. Shoot over a raised hand."], ["Short when tired", "Legs stop working", "More bend before the catch. Stop before fatigue sets in."], ["Fading or drifting", "Narrow base or weight on heels", "Land on a tape mark. Widen the feet slightly."]],
+    eye: "Watch the guide hand and the landing. If both are clean, most of the rest usually is too.",
+    drills: ["Form shooting", "One-hand ladder", "Arc check"] },
+  { n: 2, title: "Form shooting", group: "Shooting",
+    lede: "Form shooting builds the release close to the rim, where the player makes lots of shots and feels success. Distance comes later. Use it as the daily warm-up.",
+    teach: ["Start one step from the rim, straight on, one hand only.", "Make 5 in a row before stepping back. A miss resets the count.", "Add the guide hand around the free-throw line.", "Move to the angles only when straight-on is clean.", "Finish with a few free throws while the feel is fresh."],
+    cues: ["Same pocket", "Wrist snap", "Swish"],
+    faults: [["Lots of misses", "Too far out too soon", "Move closer until the make rate is high."], ["Ball hits the back rim", "Too much push, not enough arc", "Shoot over a raised hand or broom."]],
+    eye: "Count makes, not shots. A player who makes 50 of 60 is building confidence. One who makes 20 of 60 is practising missing.",
+    drills: ["One-hand ladder", "Arc check", "Bank shot box", "Form shooting", "Elbow and block shooting"] },
+  { n: 3, title: "Shooting off the catch", group: "Shooting",
+    lede: "Most shots in a game come off a pass. The shooter who is ready before the ball arrives gets the shot off before the closeout.",
+    teach: ["Show hands: both hands up as a target, fingers spread, chest height.", "Sit early: knees already bent before the catch.", "Hop: both feet land together. Either foot can pivot, slightly slower.", "One-two: inside foot, then outside foot. Fast, with rhythm.", "Catch into the pocket: straight to the shot pocket, never down to the waist.", "Square up: feet and shoulders face the rim before the rise."],
+    cues: ["Hands ready", "Sit before the catch", "Inside foot", "Catch and go"],
+    faults: [["Slow release", "Catching upright, then dipping", "Sit before the catch. Catch at chest height and go up."], ["Off-balance shots", "Feet not set before the catch", "Freeze on the catch for a count of one, then shoot."], ["Fumbled catches", "Hands not ready", "Hands up early. Partner throws slightly off target on purpose."]],
+    eye: "Watch the feet on the catch. They should land square to the rim, under the hips. The arms only copy what the feet do.",
+    drills: ["Five-spot catch and shoot", "Roll outs", "V-cut and catch"] },
+  { n: 4, title: "Shooting off the dribble", group: "Shooting",
+    lede: "The pull-up turns a drive into a shot. The key is stopping the body's momentum so the shot goes straight up. Teach the stop first, then the shot.",
+    teach: ["Two-foot stop: both feet plant at once. The most balanced stop.", "One-two stop: inside foot, then outside foot, using the drive's speed.", "Step-back: push off the front foot and hop back, away from the defender.", "Side-step: hop sideways, clear of the defender's reach.", "Last dribble: a hard pound, so the ball pops up into the pocket.", "Stop with the hips: sit into the stop, chest up, then rise straight up."],
+    cues: ["Pound and pick", "Sit", "Straight up"],
+    faults: [["Drifting forward", "Stop too late or too soft", "Pull up a step earlier. Land on a tape mark."], ["Ball crosses the body on the pick-up", "Picking up on the wrong side", "Pick the ball up on the shooting-hand side."]],
+    eye: "Compare where the player lands with where they took off. More than half a step forward means the momentum wasn't stopped.",
+    drills: ["Pull-up series", "Step-back series", "Lunge, crossover and same-foot step-back"] },
+  { n: 5, title: "Creating space", group: "Shooting",
+    lede: "A shooter needs a split second of space. It comes from changing speed and direction, and from selling one move before doing another.",
+    teach: ["Jab step: a short, sharp step at the defender. If they back off, shoot. If they jump at it, drive.", "Rocker step: jab, then rock back as if to shoot. Drive when they close in.", "Hesitation: slow down, eyes and shoulders up, then burst.", "Change of pace: slow, then fast. The change matters more than top speed.", "Lunge and cross: a big attacking step pushes the defender back, then cross over and rise into the shot."],
+    cues: ["Sell it", "Read the hips", "Slow, then fast"],
+    faults: [["Defender doesn't react", "Fake is too small or too fast", "More head and shoulders. Hold the fake for a beat."], ["Off balance after the move", "Lunge too long to recover from", "Lunge only as far as you can push back from."]],
+    eye: "Watch the defender, not your player. If the defender doesn't move on the fake, it wasn't believable.",
+    drills: ["Triple threat series", "Hesitation and go", "Lunge and between-the-legs jumper", "Lunge, crossover and same-foot step-back"] },
+  { n: 6, title: "Ball-handling foundations", group: "Ball-handling",
+    lede: "A good handle lets the player protect the ball, see the floor and change direction without losing speed. Start with control and posture, then add moves.",
+    teach: ["Fingertips: push the ball with the finger pads, not the palm.", "Pound it: a hard dribble comes back faster and is harder to steal.", "Eyes up: feel the ball, don't watch it.", "Body as a shield: off arm up, body between defender and ball.", "Low on the change: drop the hips and cross below the knee.", "Speed dribble: ball out in front at waist height in the open court.", "Control dribble: low and tight beside the body under pressure."],
+    cues: ["Pound", "Eyes up", "Low change"],
+    faults: [["Ball gets away on moves", "Slapping with the palm", "Stationary pounding with fingertips, 30 seconds each hand."], ["Looks at the ball", "Not yet confident", "Partner holds up fingers. Player calls the number while dribbling."], ["Crossover gets stolen", "Cross too high and wide", "Cross below the knee, close to the body."], ["Slow after the move", "Standing up during the move", "Stay low. First step after the move must go past the cone."]],
+    eye: "Watch the off arm and the eyes. If both are up, the player is ready for real pressure.",
+    drills: ["Cone zig-zag", "Speed and control", "Pressure release", "Double cross and hang"] },
+  { n: 7, title: "Overload training", group: "Ball-handling",
+    lede: "Make practice harder than the game: two balls, an extra task, less time. When the game slows down by comparison, one ball feels easy.",
+    teach: ["Start every overload drill slowly. Control first, then speed.", "Add one challenge at a time: a second ball, a tennis ball, or a reaction call.", "Keep sets short, 30 to 45 seconds, so quality stays high.", "Time pressure: a countdown on every rep.", "Finish with a normal one-ball rep so the player feels the difference."],
+    cues: ["Control first", "Eyes up", "Short sets"],
+    faults: [["Losing control all the time", "Too many challenges at once", "Step back one level until control is back."]],
+    eye: "Overload only works if the player is still in control most of the time. If not, make it easier.",
+    drills: ["Two-ball dribbling", "Tennis ball overload", "Clutch shooting"] },
+  { n: 8, title: "Finishing at the rim", group: "Scoring",
+    lede: "Getting to the rim is half the job. Finishing means protecting the ball from shot blockers and having more than one way to score.",
+    teach: ["Protect the ball: carry it away from the defender, chin it on contact.", "Both hands: right hand on the right side, left on the left.", "Change the timing: release early (floater, scoop) or late (reverse, pro hop).", "Use the rim: a far-side finish puts the rim between ball and blocker.", "Euro step: step one way, then sweep the ball and second step past.", "Pro hop: hop from one foot to two, finish strong on either side."],
+    cues: ["Ball high", "Chin it", "Use the rim"],
+    faults: [["Shots get blocked", "Ball held low and in front", "Carry it high and outside. Chin it on contact."], ["Only finishes with one hand", "Avoiding the weak hand", "Weak-hand-only days. Mikan drill every session."], ["Travelling on euro or hop", "Gathering late", "Walk it slowly, saying “gather, one, two”."]],
+    eye: "Look at the ball during the last two steps. If a defender could reach it, carry it higher or further away.",
+    drills: ["Mikan drill", "Help-side finishing", "Finishing package", "Pro hop finishes"] },
+  { n: 9, title: "Screens and reads", group: "Scoring",
+    lede: "Most game situations involve a screen. Teach the ball handler and screener to read the defense together, so the best option is chosen, not decided in advance.",
+    teach: ["Set it up: walk the defender away first, then come off the screen.", "Shoulder to shoulder: run tight off the screener so no one slips through.", "Screener: feet set before contact. A moving screen is a foul.", "Read, then go: look at the screener's defender first."],
+    cues: ["Set it up", "Tight", "Read the big"],
+    extra: `<h3>Reading the screen defense</h3><div class="gscroll"><table class="gtable"><thead><tr><th>Defense does</th><th>Ball handler</th><th>Screener</th></tr></thead><tbody>
+      <tr><td>Goes under</td><td>Shoot the pull-up straight away</td><td>Re-screen or pop</td></tr>
+      <tr><td>Fights over</td><td>Attack downhill to the rim</td><td>Roll hard</td></tr>
+      <tr><td>Hedges</td><td>Retreat dribble, pocket pass</td><td>Roll or slip early</td></tr>
+      <tr><td>Switches</td><td>Attack the mismatch or post the screener</td><td>Seal the smaller defender</td></tr>
+      <tr><td>Drops back</td><td>Pull-up in the mid-range</td><td>Pop out for a jumper</td></tr></tbody></table></div>`,
+    faults: [["Defender slips between", "Gap between handler and screener", "Shoulder to shoulder. Wait for the screen to be set."], ["Screen gets called a foul", "Screener still moving", "Jump stop, wide base, arms in before contact."]],
+    eye: "Freeze the drill at the screen and ask the handler what the screener's defender is doing. If they can answer, they're reading.",
+    drills: ["Pick and roll basics", "Screen and roll", "Shooting off screens"] },
+  { n: 10, title: "Preparation and practice planning", group: "Planning",
+    lede: "Good players prepare the same way every time. Your job is to build that routine and plan sessions that build skills in the right order.",
+    teach: ["One main skill per session. Repeat it until it shows up in games.", "Progress: no defender, then a cone, then a passive defender, then live.", "Finish every session with something competitive.", "Track one number per player, like makes out of 20 from a spot, week to week."],
+    cues: ["One skill", "Then pressure", "Track it"],
+    extra: `<h3>Pregame routine, 20 minutes</h3><table class="gtable"><tbody>
+      <tr><td>3 min</td><td>Dynamic warm-up: skips, lunges, slides</td></tr><tr><td>3 min</td><td>Stationary ball-handling, both hands, eyes up</td></tr>
+      <tr><td>4 min</td><td>Form shooting close to the rim</td></tr><tr><td>4 min</td><td>Catch and shoot from the spots used in the game</td></tr>
+      <tr><td>3 min</td><td>Finishes with both hands</td></tr><tr><td>3 min</td><td>Free throws, then a quiet moment to focus</td></tr></tbody></table>
+      <h3>60-minute skills session</h3><table class="gtable"><tbody>
+      <tr><td>0–8</td><td>Warm-up and ball-handling</td></tr><tr><td>8–18</td><td>Form shooting</td></tr>
+      <tr><td>18–30</td><td>Main skill of the day, taught and drilled</td></tr><tr><td>30–42</td><td>Main skill against a cone, then a defender</td></tr>
+      <tr><td>42–52</td><td>Finishing</td></tr><tr><td>52–60</td><td>Competitive game, free throws when tired</td></tr></tbody></table>
+      <h3>Weekly rhythm</h3><table class="gtable"><tbody>
+      <tr><td>Day 1</td><td>Shooting foundations and catch and shoot</td></tr><tr><td>Day 2</td><td>Ball-handling and overload</td></tr>
+      <tr><td>Day 3</td><td>Shooting off the dribble and creating space</td></tr><tr><td>Day 4</td><td>Finishing and screens</td></tr>
+      <tr><td>Day 5</td><td>Mixed review and competitive games</td></tr></tbody></table>`,
+    eye: "Keep the pregame routine identical every time. It settles nerves because the player knows exactly what comes next.",
+    drills: ["Clutch shooting"] },
+  { n: 11, title: "The coach's toolkit", group: "Planning",
+    lede: "The tools you use in every chapter: how to teach a new skill, how to correct it, and how to check progress.",
+    teach: ["Show: demonstrate it or show a clip. Keep the talking short.", "Explain: two or three key points only.", "Try: slow reps with no defender.", "Correct: one fix at a time, the most important first.", "Pressure: add speed, a defender, a score or a clock."],
+    cues: ["Praise, then fix", "One thing", "Ask, don't tell"],
+    extra: `<h3>Giving feedback</h3><ul class="gteach"><li>Praise what they did right first, then give one thing to change.</li><li>Use the cue word instead of a long explanation in the middle of a drill.</li><li>Ask questions. “Where did you land?” helps the player notice it themselves.</li><li>Film from the side and from behind. Players believe what they can see.</li></ul>
+      <h3>Player check sheet</h3><p class="glede">Rate each 1 (not yet) to 3 (consistent) every four weeks: balanced base and landing · elbow under, guide hand still · high arc · feet ready before the catch · hop and one-two footwork · pull-up stops straight up · step-back on balance · fakes make the defender react · dribbles with eyes up · low, tight crossover · two-ball control · finishes with both hands · protects the ball on drives · uses screens shoulder to shoulder · reads screen defense · follows a pregame routine.</p>`,
+    eye: "If a correction doesn't stick, the drill is probably too hard. Make it easier, get it right, then add pressure again.",
+    drills: [] },
+];
+// Four sections: what one player can practise, the team side of the game, drills, and the coaching guide.
+const SECTIONS = [
+  { id: "skills", name: "Skills", note: "Moves and skills one player can practise.",
+    cats: ["Ball handling", "Shooting", "Finishing", "Passing", "Off-ball", "Defense skills"] },
+  { id: "game", name: "The game", note: "Team plays and defenses, the court, the rules and the talk.",
+    cats: ["Team offense", "Team defense", "Court areas", "Rules", "Slang"] },
+  { id: "drills", name: "Training", note: "Short drills, mostly on your own. A ball and a hoop are enough, sometimes a few cones or a partner.",
+    cats: LEVELS },
+  { id: "coach", name: "Coaching", note: "A coach's guide to shooting, ball-handling and scoring: what to teach, what to say, what to fix, and which drills to use.",
+    cats: GROUPS }
+];
+const secOf = cat => (SECTIONS.find(s => s.cats.includes(cat)) || SECTIONS[0]).id;
+const drillsFor = term => DRILLS.filter(d => d.skills.includes(term));
+let activeSec = "skills";
+let activeCat = "All";
+let activeSkill = null; // set when coming from a skill card's "drills" button
+
+const grid = document.getElementById("grid");
+const count = document.getElementById("count");
+const filters = document.getElementById("filters");
+const controls = document.getElementById("controls");
+const sectionsEl = document.getElementById("sections");
+const secnote = document.getElementById("secnote");
+
+function esc(s) {
+  return s.replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+}
+
+// Rebuilds the chips for the active section. Terms: All, Favourites, categories. Drills: All and levels.
+function buildFilters() {
+  const sec = SECTIONS.find(x => x.id === activeSec);
+  sectionsEl.querySelectorAll(".sec").forEach(x => x.setAttribute("aria-pressed", x.dataset.sec === activeSec));
+  secnote.textContent = sec.note;
+  filters.innerHTML = "";
+  const chips = activeSec === "drills" || activeSec === "coach" ? ["All", ...sec.cats] : ["All", "Favourites", ...sec.cats];
+  chips.forEach(c => {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className = "filter";
+    b.id = "f-" + c.toLowerCase().replace(/\s+/g, "-");
+    b.dataset.cat = c;
+    if (c === "Favourites") b.innerHTML = STAR + 'Favourites · <span id="favn">' + favCount() + '</span>';
+    else b.textContent = c;
+    b.setAttribute("aria-pressed", c === activeCat);
+    b.addEventListener("click", () => setCat(c));
+    filters.appendChild(b);
+  });
+}
+
+function setCat(c) {
+  clearSearch();
+  activeCat = c;
+  activeSkill = null;
+  filters.querySelectorAll(".filter").forEach(x => x.setAttribute("aria-pressed", x.dataset.cat === c));
+  render();
+}
+
+function setSec(id) {
+  clearSearch();
+  activeSec = id;
+  activeCat = "All";
+  activeSkill = null;
+  buildFilters();
+  render();
+}
+
+SECTIONS.forEach(x => {
+  const b = document.createElement("button");
+  b.type = "button";
+  b.className = "sec";
+  b.id = "s-" + x.id;
+  b.dataset.sec = x.id;
+  b.textContent = x.name;
+  b.addEventListener("click", () => setSec(x.id));
+  sectionsEl.appendChild(b);
+});
+buildFilters();
+
+function scrollToControls() {
+  const smooth = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (controls.getBoundingClientRect().top < 0) controls.scrollIntoView({ behavior: smooth ? "smooth" : "auto", block: "start" });
+}
+
+// Jump from a drill to one of the skills it trains, and highlight that card.
+function showTerm(name) {
+  const t = TERMS.find(x => x.term === name);
+  if (!t) return;
+  clearSearch();
+  activeSec = secOf(t.cat);
+  activeCat = t.cat;
+  activeSkill = null;
+  buildFilters();
+  render();
+  const card = document.getElementById("t-" + tagBase(name));
+  if (!card) return;
+  const smooth = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  card.scrollIntoView({ behavior: smooth ? "smooth" : "auto", block: "center" });
+  card.classList.add("flash");
+  setTimeout(() => card.classList.remove("flash"), 1600);
+}
+
+// Jump from a guide chapter to one drill, and highlight it.
+function showDrill(name) {
+  clearSearch();
+  activeSec = "drills";
+  activeCat = "All";
+  activeSkill = null;
+  buildFilters();
+  render();
+  const card = document.getElementById("d-" + tagBase(name));
+  if (!card) return;
+  const smooth = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  card.scrollIntoView({ behavior: smooth ? "smooth" : "auto", block: "center" });
+  card.classList.add("flash");
+  setTimeout(() => card.classList.remove("flash"), 1600);
+}
+
+count.addEventListener("click", e => {
+  if (e.target.closest(".clear-skill")) setCat("All");
+});
+
+grid.addEventListener("click", e => {
+  // While the Watch pop-up is open, a tap anywhere else only closes it.
+  if (wmBtn && !e.target.closest(".wm, .play")) { closeWatchMenu(); return; }
+  if (e.target.closest(".cat, .drills-link, .skill-link")) clearSearch();
+  const star = e.target.closest(".fav");
+  if (star) {
+    const name = star.dataset.term;
+    if (favs.has(name)) favs.delete(name); else favs.add(name);
+    saveFavs();
+    document.getElementById("favn").textContent = favCount();
+    if (activeCat === "Favourites") render();
+    else {
+      const on = favs.has(name);
+      star.setAttribute("aria-pressed", on);
+      star.setAttribute("aria-label", (on ? "Remove " : "Save ") + name + (on ? " from favourites" : " to favourites"));
+    }
+    return;
+  }
+  const dl = e.target.closest(".drills-link");
+  if (dl) {
+    activeSec = "drills";
+    activeCat = "All";
+    activeSkill = dl.dataset.skill;
+    buildFilters();
+    render();
+    scrollToControls();
+    return;
+  }
+  const sk = e.target.closest(".skill-link");
+  if (sk) {
+    // Filter the drill list to everything that trains this skill.
+    activeSec = "drills";
+    activeCat = "All";
+    activeSkill = sk.dataset.skill;
+    buildFilters();
+    filters.querySelectorAll(".filter").forEach(x => x.setAttribute("aria-pressed", false));
+    render();
+    scrollToControls();
+    return;
+  }
+  const dj = e.target.closest(".drill-jump");
+  if (dj) { showDrill(dj.dataset.drill); return; }
+  const lvl = e.target.closest(".lvl");
+  if (lvl) { setCat(lvl.dataset.level); scrollToControls(); return; }
+  // Tapping a card's category chip filters to that category and jumps back up to the filters.
+  const chip = e.target.closest(".cat");
+  if (!chip) {
+    // Anywhere else on a card (not a link or another button) opens the video player.
+    const play = e.target.closest(".play");
+    const card = e.target.closest(".term");
+    if (play) { openWatchMenu(play); return; }
+    if (card && card.dataset.name && !e.target.closest("a, button") && !getSelection().toString()) {
+      openPlayer(card.dataset.name, card.dataset.kind);
+    }
+    return;
+  }
+  activeCat = chip.dataset.cat;
+  activeSec = secOf(activeCat);
+  activeSkill = null;
+  buildFilters();
+  render();
+  scrollToControls();
+});
+
+// Video player: every item plays the same demo clip for now.
+// Later, give each term/drill its own file, e.g. VIDEOS["Euro step"] = "euro-step.mp4".
+const DEMO_VIDEO = "intro.mp4";
+const VIDEOS = {};
+VIDEOS["Transition vs fast break"] = "transition-vs-fast-break.mp4";
+const PLAY_ICON = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>`;
+function playBtn(name, kind) {
+  return `<button type="button" class="play" data-name="${esc(name)}" data-kind="${esc(kind)}" aria-haspopup="menu" aria-expanded="false" aria-label="Watch ${esc(name)}">${PLAY_ICON}Watch</button>`;
+}
+// Watch menu: one small pop-up, moved next to whichever Watch button was tapped.
+const BALL_ICON = `<svg viewBox="-50 -50 100 100" aria-hidden="true"><circle r="46" fill="#d4581a" stroke="#1d1a17" stroke-width="6"/><path d="M-46 0H46M0-46V46M-32-32Q-13 0-32 32M32-32Q13 0 32 32" fill="none" stroke="#1d1a17" stroke-width="6"/></svg>`;
+const watchMenu = document.createElement("div");
+watchMenu.className = "wm";
+watchMenu.setAttribute("role", "menu");
+let wmBtn = null;
+function closeWatchMenu() {
+  if (!wmBtn) return;
+  wmBtn.setAttribute("aria-expanded", "false");
+  wmBtn = null;
+  watchMenu.remove();
+}
+function openWatchMenu(btn) {
+  if (wmBtn === btn) { closeWatchMenu(); return; }
+  closeWatchMenu();
+  const name = btn.dataset.name;
+  watchMenu.innerHTML = `
+    <button type="button" class="wm-item wm-hl" role="menuitem">${BALL_ICON}<span>hoopslang<small>Video here</small></span></button>
+    <a class="wm-item" role="menuitem" href="${ytSearch(name)}" target="_blank" rel="noopener"><span class="wm-yt">${YT_ICON}</span><span>YouTube<small>Opens the app on a phone</small></span></a>
+    <a class="wm-item" role="menuitem" href="${igTag(name)}" target="_blank" rel="noopener"><span class="wm-ig">${IG_LINE}</span><span>Instagram<small>Opens the app on a phone</small></span></a>`;
+  btn.after(watchMenu);
+  wmBtn = btn;
+  btn.setAttribute("aria-expanded", "true");
+  watchMenu.querySelector(".wm-item").focus({ preventScroll: true });
+}
+watchMenu.addEventListener("click", e => {
+  e.stopPropagation();
+  const btn = wmBtn;
+  if (e.target.closest(".wm-hl")) { closeWatchMenu(); openPlayer(btn.dataset.name, btn.dataset.kind); return; }
+  if (e.target.closest("a")) setTimeout(closeWatchMenu, 0);
+});
+document.addEventListener("click", e => {
+  if (wmBtn && !e.target.closest(".wm, .play")) closeWatchMenu();
+});
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape" && wmBtn) { const b = wmBtn; closeWatchMenu(); b.focus(); }
+});
+const player = document.getElementById("player");
+const pVideo = document.getElementById("pVideo");
+let lastFocus = null;
+function openPlayer(name, kind) {
+  lastFocus = document.activeElement;
+  document.getElementById("pTitle").textContent = name;
+  document.getElementById("pKind").textContent = kind || "";
+  const src = VIDEOS[name] || DEMO_VIDEO;
+  if (pVideo.getAttribute("src") !== src) pVideo.setAttribute("src", src);
+  pVideo.currentTime = 0;
+  player.showModal();
+  pVideo.play().catch(() => {});
+}
+function closePlayer() { if (player.open) player.close(); }
+player.addEventListener("close", () => {
+  pVideo.pause();
+  if (lastFocus && lastFocus.focus) lastFocus.focus({ preventScroll: true });
+});
+document.getElementById("pClose").addEventListener("click", closePlayer);
+// Tapping the dark area around the player closes it.
+player.addEventListener("click", e => { if (e.target === player) closePlayer(); });
+
+function linkIcons(name) {
+  return `<a class="ext ext-yt" href="${ytSearch(name)}" target="_blank" rel="noopener" title="${ytQuery(name)} on YouTube">${YT_ICON}YouTube</a>
+        <a class="ext ext-ig" href="${igTag(name)}" target="_blank" rel="noopener" title="#${tagFor(name)} on Instagram">${IG_LINE}Instagram</a>`;
+}
+
+// Search: one query across every term and drill, ignoring the section and filters.
+let query = "";
+const norm = x => x.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, " ").trim();
+function hl(text) {
+  const safe = esc(text);
+  if (!query) return safe;
+  const words = norm(query).split(" ").filter(Boolean).map(w => w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+  if (!words.length) return safe;
+  return safe.replace(new RegExp("(" + words.join("|") + ")", "gi"), "<mark>$1</mark>");
+}
+// Score: name starts with query > name contains every word > text contains every word.
+function score(name, rest) {
+  const q = norm(query), n = norm(name), words = q.split(" ");
+  if (n.startsWith(q)) return 3;
+  if (words.every(w => n.includes(w))) return 2;
+  const all = n + " " + norm(rest);
+  return words.every(w => all.includes(w)) ? 1 : 0;
+}
+
+function termCard(t) {
+  const nd = drillsFor(t.term).length;
+  return `
+    <article class="term" id="t-${tagBase(t.term)}" data-name="${esc(t.term)}" data-kind="${esc(t.cat)}">
+      <div class="term-head">
+        <h2>${hl(t.term)}</h2>
+        <div class="head-tools">
+          <button type="button" class="cat" data-cat="${esc(t.cat)}" aria-pressed="${t.cat === activeCat}" aria-label="Show all ${esc(t.cat)} terms">${esc(t.cat)}</button>
+          <button type="button" class="fav" data-term="${esc(t.term)}" aria-pressed="${favs.has(t.term)}" aria-label="${favs.has(t.term) ? "Remove " + esc(t.term) + " from favourites" : "Save " + esc(t.term) + " to favourites"}">${STAR}</button>
+        </div>
+      </div>
+      <p>${hl(t.def)}</p>
+      <div class="links">
+        ${playBtn(t.term, t.cat)}
+        ${nd ? `<button type="button" class="drills-link" data-skill="${esc(t.term)}">Train this →</button>` : ""}
+      </div>
+    </article>`;
+}
+
+function drillCard(d) {
+  return `
+    <article class="term drill" id="d-${tagBase(d.name)}" data-name="${esc(d.name)}" data-kind="Drill · ${esc(d.level)}">
+      <div class="term-head">
+        <h2>${hl(d.name)}</h2>
+        <button type="button" class="cat lvl" data-level="${d.level}" aria-pressed="${d.level === activeCat}" aria-label="Show all ${d.level} drills">${d.level}</button>
+      </div>
+      <div class="meta">${esc(d.time)} · ${esc(d.gear)}</div>
+      <div class="trains"><span>Trains</span>${d.skills.map(s => `<button type="button" class="skill-link" data-skill="${esc(s)}" aria-pressed="${s === activeSkill}" aria-label="Show all drills for ${esc(s)}">${hl(s)}</button>`).join("")}</div>
+      <ol class="steps">${d.steps.map(s => `<li>${esc(s)}</li>`).join("")}</ol>
+      <p class="tip"><b>Coaching point:</b> ${esc(d.tip)}</p>
+      <div class="links">
+        ${playBtn(d.name, "Drill · " + d.level)}
+        <a class="book" href="${BOOKING_URL}" target="_blank" rel="noopener">Book a session →</a>
+      </div>
+    </article>`;
+}
+
+function guideCard(g) {
+  const teach = g.teach.map(t => {
+    const i = t.indexOf(": ");
+    return i > 0 && i < 28 ? `<li><b>${esc(t.slice(0, i))}:</b> ${esc(t.slice(i + 2))}</li>` : `<li>${esc(t)}</li>`;
+  }).join("");
+  const faults = g.faults ? `<details class="gfaults"><summary>Common faults and fixes</summary><div class="gscroll"><table class="gtable"><thead><tr><th>You see</th><th>Usually because</th><th>Fix</th></tr></thead><tbody>${
+    g.faults.map(r => `<tr>${r.map(c => `<td>${esc(c)}</td>`).join("")}</tr>`).join("")}</tbody></table></div></details>` : "";
+  const drills = g.drills.length ? `<div class="trains"><span>Drills</span>${g.drills.map(d => `<button type="button" class="drill-jump" data-drill="${esc(d)}" aria-label="Open the ${esc(d)} drill">${esc(d)}</button>`).join("")}</div>` : "";
+  return `
+    <article class="term guide" id="g-${tagBase(g.title)}">
+      <div class="term-head"><h2><span class="gnum">${String(g.n).padStart(2, "0")}</span>${esc(g.title)}</h2><span class="gtag">${esc(g.group)}</span></div>
+      <p class="glede">${esc(g.lede)}</p>
+      <div class="gcols">
+        <div><h3>Teach it</h3><ul class="gteach">${teach}</ul></div>
+        <div><h3>Cues</h3><div class="gcues">${g.cues.map(c => `<span class="gcue">${esc(c)}</span>`).join("")}</div>
+          <h3>Coach's eye</h3><p class="geye">${esc(g.eye)}</p></div>
+      </div>
+      ${g.extra ? `<div class="gextra">${g.extra}</div>` : ""}
+      ${faults}
+      ${drills}
+    </article>`;
+}
+
+function renderGuide() {
+  const list = GUIDE.filter(g => activeCat === "All" || g.group === activeCat);
+  count.textContent = list.length === 1 ? "1 chapter" : list.length + " chapters";
+  grid.innerHTML = list.map(guideCard).join("");
+}
+
+function renderSearch() {
+  const rank = (arr, name, rest) => arr
+    .map(x => [x, score(name(x), rest(x))]).filter(([, sc]) => sc)
+    .sort((a, b) => b[1] - a[1] || name(a[0]).localeCompare(name(b[0])))
+    .map(([x]) => x);
+  const terms = rank(TERMS, t => t.term, t => t.def + " " + t.cat);
+  const drills = rank(DRILLS, d => d.name, d => d.skills.join(" ") + " " + d.level + " " + d.steps.join(" "));
+  const n = terms.length + drills.length;
+  count.innerHTML = `${n === 1 ? "1 result" : n + " results"} for <b>${esc(query.trim())}</b> · <button type="button" class="clear-skill">Clear search</button>`;
+  grid.innerHTML = n ? terms.map(termCard).join("") + drills.map(drillCard).join("")
+    : `<div class="empty">Nothing matches “${esc(query.trim())}”. Try a shorter word, like “cross” or “zone”.</div>`;
+}
+
+function renderDrills() {
+  const list = DRILLS
+    .filter(d => activeSkill ? d.skills.includes(activeSkill) : activeCat === "All" || d.level === activeCat)
+    .sort((a, b) => LEVELS.indexOf(a.level) - LEVELS.indexOf(b.level) || a.name.localeCompare(b.name));
+
+  const n = list.length === 1 ? "1 drill" : list.length + " drills";
+  if (activeSkill) count.innerHTML = `${n} for <b>${esc(activeSkill)}</b> · <button type="button" class="clear-skill">Show all training</button>`;
+  else count.textContent = n;
+
+  grid.innerHTML = list.length ? list.map(drillCard).join("") : `<div class="empty">No drills here yet.</div>`;
+}
+
+function render() {
+  if (query.trim()) return renderSearch();
+  if (activeSec === "drills") return renderDrills();
+  if (activeSec === "coach") return renderGuide();
+  const list = TERMS
+    .filter(t => activeCat === "Favourites" ? favs.has(t.term)
+      : activeCat === "All" ? secOf(t.cat) === activeSec
+      : t.cat === activeCat)
+    .sort((a, b) => a.term.localeCompare(b.term));
+
+  count.textContent = list.length === 1 ? "1 term" : list.length + " terms";
+  grid.innerHTML = list.length ? list.map(termCard).join("")
+    : `<div class="empty">${activeCat === "Favourites" ? "No favourites yet. Tap the star on any term to save it here. Favourites are kept in this browser only." : "No terms in this category yet."}</div>`;
+}
+
+const searchBtn = document.getElementById("searchBtn");
+const searchBar = document.getElementById("searchBar");
+const qInput = document.getElementById("q");
+// Any filter, section or chip tap leaves search mode and goes back to normal browsing.
+function clearSearch() { query = ""; qInput.value = ""; hideSuggest(); syncClear(); }
+// The x inside the field shows only while there's something typed, and clears the results.
+const qClear = document.getElementById("qClear");
+function syncClear() { qClear.hidden = !qInput.value; }
+qClear.addEventListener("click", () => { clearSearch(); render(); qInput.focus(); });
+
+// Autocomplete: up to 6 term and drill names matching what's typed. Picking one shows it and jumps to its card.
+const suggest = document.getElementById("suggest");
+let sugItems = [], sugIdx = -1;
+function hideSuggest() {
+  suggest.hidden = true; suggest.innerHTML = ""; sugItems = []; sugIdx = -1;
+  qInput.setAttribute("aria-expanded", "false");
+  qInput.removeAttribute("aria-activedescendant");
+}
+function buildSuggest() {
+  const q = query.trim();
+  if (!q) return hideSuggest();
+  const pick = (arr, name, label, kind) => arr
+    .map(x => ({ name: name(x), label: label(x), kind, sc: score(name(x), "") }))
+    .filter(o => o.sc);
+  sugItems = [...pick(TERMS, t => t.term, t => t.cat, "t"), ...pick(DRILLS, d => d.name, () => "Drill", "d")]
+    .sort((a, b) => b.sc - a.sc || a.name.length - b.name.length || a.name.localeCompare(b.name))
+    .slice(0, 6);
+  if (!sugItems.length || (sugItems.length === 1 && norm(sugItems[0].name) === norm(q))) return hideSuggest();
+  sugIdx = -1;
+  suggest.innerHTML = sugItems.map((o, i) =>
+    `<li role="option" id="sug-${i}" data-i="${i}" aria-selected="false"><span>${hl(o.name)}</span><small>${esc(o.label)}</small></li>`).join("");
+  suggest.hidden = false;
+  qInput.setAttribute("aria-expanded", "true");
+}
+function moveSuggest(d) {
+  const n = sugItems.length;
+  if (!n) return;
+  sugIdx = sugIdx < 0 && d < 0 ? n - 1 : (sugIdx + d + n) % n;
+  suggest.querySelectorAll("li").forEach((li, i) => li.setAttribute("aria-selected", i === sugIdx));
+  qInput.setAttribute("aria-activedescendant", "sug-" + sugIdx);
+  document.getElementById("sug-" + sugIdx).scrollIntoView({ block: "nearest" });
+}
+function pickSuggest(i) {
+  const o = sugItems[i];
+  if (!o) return;
+  qInput.value = query = o.name;
+  hideSuggest();
+  render();
+  qInput.blur();
+  syncClear();
+  const id = (o.kind === "t" ? "t-" : "d-") + tagBase(o.name);
+  // Scroll after the phone keyboard has closed; scrolling while it animates away gets cancelled.
+  const go = () => {
+    const card = document.getElementById(id);
+    if (!card) return;
+    const r = card.getBoundingClientRect();
+    const top = window.scrollY + r.top - Math.max(16, (window.innerHeight - r.height) / 2);
+    const smooth = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    window.scrollTo({ top: Math.max(0, top), behavior: smooth ? "smooth" : "auto" });
+    card.classList.add("flash");
+    setTimeout(() => card.classList.remove("flash"), 1600);
+  };
+  requestAnimationFrame(go);
+  setTimeout(go, 400);
+}
+// pointerdown + preventDefault keeps focus in the field so the list doesn't close before the tap lands.
+suggest.addEventListener("pointerdown", e => e.preventDefault());
+suggest.addEventListener("mousedown", e => e.preventDefault());
+// Pick on pointerup: on phones the field can lose focus before a click event arrives, which would close the list first.
+suggest.addEventListener("pointerup", e => {
+  const li = e.target.closest("li");
+  if (li) pickSuggest(+li.dataset.i);
+});
+function openSearch(open) {
+  searchBar.hidden = !open;
+  searchBtn.setAttribute("aria-expanded", open);
+  searchBtn.setAttribute("aria-label", open ? "Close search" : "Search");
+  if (open) qInput.focus();
+  else if (query) { clearSearch(); render(); }
+}
+searchBtn.addEventListener("click", () => openSearch(searchBar.hidden));
+qInput.addEventListener("input", () => { query = qInput.value; syncClear(); render(); buildSuggest(); });
+qInput.addEventListener("focus", buildSuggest);
+qInput.addEventListener("blur", () => setTimeout(() => { if (document.activeElement !== qInput) hideSuggest(); }, 250));
+qInput.addEventListener("keydown", e => {
+  if (e.key === "ArrowDown") { e.preventDefault(); moveSuggest(1); }
+  else if (e.key === "ArrowUp") { e.preventDefault(); moveSuggest(-1); }
+  else if (e.key === "Enter") {
+    if (sugIdx >= 0) { e.preventDefault(); pickSuggest(sugIdx); }
+    else { hideSuggest(); qInput.blur(); }
+  }
+  else if (e.key === "Escape") {
+    if (!suggest.hidden) hideSuggest();
+    else { openSearch(false); searchBtn.focus(); }
+  }
+});
+
+const toTop = document.getElementById("toTop");
+// Floating button: only with more than 10 cards, once the filters have scrolled out of view.
+const syncToTop = () => {
+  const on = grid.querySelectorAll("article").length > 10 && controls.getBoundingClientRect().bottom < 0;
+  toTop.classList.toggle("show", on);
+  toTop.inert = !on;
+};
+addEventListener("scroll", syncToTop, { passive: true });
+new MutationObserver(syncToTop).observe(grid, { childList: true });
+toTop.addEventListener("click", () => {
+  const smooth = !matchMedia("(prefers-reduced-motion: reduce)").matches;
+  window.scrollTo({ top: 0, behavior: smooth ? "smooth" : "auto" });
+});
+
+render();
+syncToTop();
+</script>
+
+
+</body></html>
